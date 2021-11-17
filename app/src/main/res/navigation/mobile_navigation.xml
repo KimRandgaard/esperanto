@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_channels"
         android:name="com.example.esperanto_menu.ui.channel.ChannelFragment"
         android:label="@string/title_channel"
         tools:layout="@layout/fragment_channel" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_favorite"
         android:name="com.example.esperanto_menu.ui.favorites.FavoritesFragment"
         android:label="@string/title_favorites"
         tools:layout="@layout/fragment_favorites" />
