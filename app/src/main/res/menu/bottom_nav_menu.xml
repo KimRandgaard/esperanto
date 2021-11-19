@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/home"
+        android:icon="@drawable/ic_home"
         android:title="@string/title_home"/>
 
     <item
         android:id="@+id/navigation_channels"
-        android:icon="@drawable/music"
+        android:icon="@drawable/ic_channel"
         android:title="@string/title_channel"/>
 
     <item
         android:id="@+id/navigation_favorite"
-        android:icon="@drawable/favorite"
+        android:icon="@drawable/ic_favorite"
         android:title="@string/title_favorites"/>
 
     <item
         android:id="@+id/navigation_search"
-        android:icon="@drawable/search"
+        android:icon="@drawable/ic_search"
         android:title="@string/title_search"/>
 </menu>
