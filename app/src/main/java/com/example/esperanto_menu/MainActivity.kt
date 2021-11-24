@@ -8,6 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.esperanto_menu.databinding.ActivityMainBinding
+import com.example.esperanto_menu.ui.network.import
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +27,10 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_channels, R.id.navigation_favorite, R.id.navigation_search
+                R.id.navigation_home,
+                R.id.navigation_channels,
+                R.id.navigation_favorite,
+                R.id.navigation_search
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

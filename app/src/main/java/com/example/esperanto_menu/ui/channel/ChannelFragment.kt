@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.esperanto_menu.R
 import com.example.esperanto_menu.databinding.FragmentChannelBinding
 
 class ChannelFragment : Fragment() {
@@ -30,12 +31,27 @@ class ChannelFragment : Fragment() {
         _binding = FragmentChannelBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textChannels
-        channelViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
         return root
     }
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//
+//        val imageId = intArrayOf(R.drawable.channel_a)
+//        val channelName = arrayOf("Mozaiko")
+//        val channelDescription = arrayOf("Det her er den bedst podcast i verdenen")
+//        val hoert = arrayOf("ja/nej")
+//
+//        channelArrayList = ArrayList()
+//
+//        for( i in channelName.indices){
+//
+//            val channel = Channels_Data(channelName[i], channelDescription[i], hoert[i], imageId[i])
+//            channelArrayList.add(channel)
+//
+//        }
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()

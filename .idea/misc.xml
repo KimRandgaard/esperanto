@@ -3,13 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Bruger/OneDrive/DTU/3. semester/62550 User experince &amp; mobile application/Esparanto/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Bruger/OneDrive/DTU/3. semester/62550 User experince &amp; mobile application/Esparanto/app/src/main/res/layout/fragment_channel.xml" value="0.15" />
-        <entry key="..\:/Users/Bruger/OneDrive/DTU/3. semester/62550 User experince &amp; mobile application/Esparanto/app/src/main/res/layout/fragment_favorites.xml" value="0.30842391304347827" />
-        <entry key="..\:/Users/Bruger/OneDrive/DTU/3. semester/62550 User experince &amp; mobile application/Esparanto/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2740740740740741" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/drawable/ic_channel.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/drawable/ic_favorite.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/drawable/ic_home.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/drawable/ic_launcher_background.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2740740740740741" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/drawable/ic_search.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/drawable/ic_search2.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/layout/activity_main.xml" value="0.17806484295845998" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/layout/fragment_channel.xml" value="0.33" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/layout/fragment_favorites.xml" value="0.17806484295845998" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/layout/fragment_search.xml" value="0.33" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/layout/list_item.xml" value="0.33" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Esparanto/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20555555555555555" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3134057971014493" />
         <entry key="app/src/main/res/layout/fragment_channel.xml" value="0.23429584599797365" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2828125" />
+        <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.43568840579710144" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2828125" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2828125" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.2828125" />
