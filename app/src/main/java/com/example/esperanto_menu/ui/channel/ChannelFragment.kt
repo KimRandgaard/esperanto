@@ -1,5 +1,7 @@
 package com.example.esperanto_menu.ui.channel
 
+import android.app.Activity
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -59,6 +61,13 @@ class ChannelFragment : Fragment() {
 
         var channelArrayList = ArrayList<Channels_Data>()
         channelArrayList.add(Channels_Data("Mozaiko","Mo","f","g","33","fefe"))
+        channelArrayList.add(Channels_Data("p3","Mo","f","g","33","fefe"))
+        channelArrayList.add(Channels_Data("p4","Mo","f","g","33","fefe"))
+        channelArrayList.add(Channels_Data("p5","Mo","f","g","33","fefe"))
+
+        binding.lvChannelList.setBackgroundColor(Color.CYAN)
+        binding.lvChannelList.adapter = Channel_Adapter(requireContext(), channelArrayList)
+
     }
 
     override fun onDestroyView() {
