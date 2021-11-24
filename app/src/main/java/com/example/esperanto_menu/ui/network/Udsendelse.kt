@@ -1,6 +1,6 @@
 package com.example.esperanto_menu.ui.network
 
-data class import(
+data class Udsendelse(
     val nomo: String,
     val plennomo: String,
     val hejmo: String,

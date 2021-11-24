@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-private const val BASE_URL = "https://esperanto-radio.com"
+private const val BASE_URL = "https://esperanto-tv.com"
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -17,23 +17,9 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
-//interface importServiceNomo {
-//    @GET("nomo")
-//    suspend fun getNomo(): List<import>
-//    @GET("plennomo")
-//    suspend fun getPlennomo(): List<import>
-//    @GET("hejmo")
-//    suspend fun getHejmo(): List<import>
-//    @GET("mp3fajlo")
-//    suspend fun getMp3fajlo(): List<import>
-//    @GET("dato")
-//    suspend fun getDato(): List<import>
-//    @GET("teksto")
-//    suspend fun getTeksto(): List<import>
-//}
 interface RadioService {
-    @GET("/radio.json")
-    suspend fun getRadio(): import
+    @GET("/radio2.json")
+    suspend fun getRadio(): List<Udsendelse>
 }
 
 object ImportApi {

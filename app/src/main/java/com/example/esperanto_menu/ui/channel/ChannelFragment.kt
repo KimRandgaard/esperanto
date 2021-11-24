@@ -10,6 +10,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.esperanto_menu.R
 import com.example.esperanto_menu.databinding.FragmentChannelBinding
+import androidx.lifecycle.viewModelScope
+import com.example.esperanto_menu.ui.network.ImportApi
+import kotlinx.coroutines.launch
 
 class ChannelFragment : Fragment() {
 
@@ -30,28 +33,33 @@ class ChannelFragment : Fragment() {
 
         _binding = FragmentChannelBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        println("Hej Verden XXXXX")
+        channelViewModel.viewModelScope.launch {
+            try {
+                println("Hej Verden XXXXX2")
+                val listResult = ImportApi.retrofitService.getRadio()
+                println("Hej Verden XXXXX3" + listResult)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
 
         return root
     }
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//
-//        val imageId = intArrayOf(R.drawable.channel_a)
-//        val channelName = arrayOf("Mozaiko")
-//        val channelDescription = arrayOf("Det her er den bedst podcast i verdenen")
-//        val hoert = arrayOf("ja/nej")
-//
-//        channelArrayList = ArrayList()
-//
-//        for( i in channelName.indices){
-//
-//            val channel = Channels_Data(channelName[i], channelDescription[i], hoert[i], imageId[i])
-//            channelArrayList.add(channel)
-//
-//        }
-//    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        val imageId = intArrayOf(R.drawable.channel_a)
+        val channelName = arrayOf("Mozaiko")
+        val channelDescription = arrayOf("Det her er den bedst podcast i verdenen")
+        val hoert = arrayOf("ja/nej")
+
+
+        var channelArrayList = ArrayList<Channels_Data>()
+        channelArrayList.add(Channels_Data("Mozaiko","Mo","f","g","33","fefe"))
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

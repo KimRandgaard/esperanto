@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.esperanto_menu.R
+import com.example.esperanto_menu.ui.network.Udsendelse
 
 
 class Channel_Adapter(private val context : Activity, private val arrayList : ArrayList<Channels_Data>)
@@ -23,13 +24,11 @@ class Channel_Adapter(private val context : Activity, private val arrayList : Ar
         val channeldescription : TextView = view.findViewById(R.id.tvChannelDesription)
         val done : TextView = view.findViewById(R.id.Hoert)
 
-        imageView.setImageResource(arrayList[position].imageId)
-        channelName.text = arrayList[position].channelName
-        channeldescription.text = arrayList[position].channelDescriptor
-        done.text = arrayList[position].Hoert
+        imageView.setImageResource(R.drawable.channel_a)
+        channelName.text = arrayList[position].nomo
+//        channeldescription.text = arrayList[position].channelDescriptor
+//        done.text = arrayList[position].Hoert
 
         return view
     }
-
-
 }
