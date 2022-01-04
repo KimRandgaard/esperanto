@@ -1,7 +1,7 @@
 package com.example.esperanto_menu.ui.channel
 
-import android.app.Activity
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,14 +9,12 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.esperanto_menu.R
-import com.example.esperanto_menu.ui.network.Udsendelse
 
 
-class Channel_Adapter(private val context1 : Context, private val arrayList : ArrayList<Channels_Data>)
-                        : ArrayAdapter<Channels_Data>(context1, R.layout.list_item, arrayList)
+class Channel_Adapter(private val context1 : Context, private val arrayList : ArrayList<Channels_Datas>)
+                        : ArrayAdapter<Channels_Datas>(context1, R.layout.list_item, arrayList)
 {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-
         val inflater : LayoutInflater = LayoutInflater.from(context)
         val view : View = inflater.inflate(R.layout.list_item, null)
 

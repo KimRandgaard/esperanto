@@ -1,20 +1,23 @@
 package com.example.esperanto_menu.ui.channel
 
-import android.app.Activity
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.esperanto_menu.R
 import com.example.esperanto_menu.databinding.FragmentChannelBinding
 import androidx.lifecycle.viewModelScope
 import com.example.esperanto_menu.ui.network.ImportApi
+import com.squareup.moshi.JsonAdapter
+import com.squareup.moshi.JsonReader
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.launch
+import java.util.stream.DoubleStream.builder
 
 class ChannelFragment : Fragment() {
 
@@ -52,21 +55,12 @@ class ChannelFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val channel = channelViewModel.getchannellist(requireContext())
+    //    Log.d("Jens", channel.toString())
 
-        val imageId = intArrayOf(R.drawable.channel_a)
-        val channelName = arrayOf("Mozaiko")
-        val channelDescription = arrayOf("Det her er den bedst podcast i verdenen")
-        val hoert = arrayOf("ja/nej")
-
-
-        var channelArrayList = ArrayList<Channels_Data>()
-        channelArrayList.add(Channels_Data("Mozaiko","Mo","f","g","33","fefe"))
-        channelArrayList.add(Channels_Data("p3","Mo","f","g","33","fefe"))
-        channelArrayList.add(Channels_Data("p4","Mo","f","g","33","fefe"))
-        channelArrayList.add(Channels_Data("p5","Mo","f","g","33","fefe"))
-
-        binding.lvChannelList.setBackgroundColor(Color.CYAN)
-        binding.lvChannelList.adapter = Channel_Adapter(requireContext(), channelArrayList)
+        channel.forEach{
+            Log.d("Jens", it.nomo.toString())
+        }
 
     }
 

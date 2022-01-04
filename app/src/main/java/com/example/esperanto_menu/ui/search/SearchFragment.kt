@@ -15,9 +15,6 @@ class SearchFragment : Fragment() {
 
     private lateinit var searchViewModel: SearchViewModel
     private var _binding: FragmentSearchBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -31,7 +28,7 @@ class SearchFragment : Fragment() {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
+        val textView: TextView = binding.search
         searchViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
