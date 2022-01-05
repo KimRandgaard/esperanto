@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         supportActionBar?.hide()
+        // testing gitkraken account with commits and push
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
