@@ -129,20 +129,20 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginLeft="4dp"
-				android:text="16.10"
+				android:text="15.45"
 				android:textColor="@color/menu_red"
 				android:textSize="12sp"
 				tools:ignore="HardcodedText" />
 
 			<SeekBar
 				android:id="@+id/seekBar"
-				android:layout_width="0dp"
-				android:layout_height="wrap_content"
+				android:layout_width="2dp"
+				android:layout_height="1dp"
 				android:layout_weight="1"
 				android:focusable="false"
 				android:max="100"
 				android:progress="60"
-				android:progressDrawable="@integer/material_motion_duration_long_1" />
+				android:progressDrawable="@drawable/seekbar_progress" />
 
 			<TextView
 				android:id="@+id/slutttid"
@@ -150,7 +150,7 @@
 				android:layout_height="wrap_content"
 				android:layout_marginRight="4dp"
 				android:importantForAccessibility="no"
-				android:text="16.30"
+				android:text="10.30"
 				android:textColor="@color/menu_red"
 				android:textSize="12sp"
 				tools:ignore="HardcodedText" />
@@ -215,7 +215,7 @@
 
 			<SeekBar
 				android:id="@+id/lydstyrke"
-				android:layout_width="0dp"
+				android:layout_width="421dp"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="16dp"
 				android:layout_marginBottom="16dp"
