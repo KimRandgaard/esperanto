@@ -1,5 +1,6 @@
 package com.example.esperanto_menu.model.adapter
 
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -14,11 +15,11 @@ import com.example.esperanto_menu.model.data.Channels_Datas
 import java.util.concurrent.TimeoutException
 
 
-class Channel_Adapter(
+class ToStriing_Adapter_Channels(
     private val context: Context,
-    private val values: List<Channel>
+    private val values: List<String>
 
-) : RecyclerView.Adapter<Channel_Adapter.ViewHolder>() {
+) : RecyclerView.Adapter<ToStriing_Adapter_Channels.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(context)
@@ -37,8 +38,8 @@ class Channel_Adapter(
 
         private val textView = view.findViewById<TextView>(R.id.channelName)
 
-        fun bind(item: Channel) {
-            textView.text= item.nomo.toString()
+        fun bind(item: String) {
+            textView.text= item
         }
     }
 

@@ -7,16 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.esperanto_menu.databinding.FragmentChannelBinding
+import com.example.esperanto_menu.model.adapter.Channel_Adapter
+import com.example.esperanto_menu.model.adapter.ToStriing_Adapter_Channels
+import com.example.esperanto_menu.model.network.ImportApi
+import kotlinx.coroutines.launch
 
 class ChannelFragment : Fragment() {
-
-//    private lateinit var channelViewModel: ChannelViewModel
-//    private var _binding: FragmentChannelBinding? = null
-//
-//    // This property is only valid between onCreateView and
-//    // onDestroyView.
-//    private val binding get() = _binding!!
 
     private var _binding: FragmentChannelBinding? = null
     private val binding get() = _binding!!
@@ -27,23 +27,7 @@ class ChannelFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//        channelviewmodel =
-//            ViewModelProvider(this).get(ChannelViewModel::class.java)
-//
-//        _binding = FragmentChannelBinding.inflate(inflater, container, false)
-//        val root: View = binding.root
-//        println("Hej Verden XXXXX")
-//        channelviewmodel.viewModelScope.launch {
-//            try {
-//                println("Hej Verden XXXXX2")
-//                val listResult = ImportApi.retrofitService.getRadio()
-//                println("Hej Verden XXXXX3" + listResult)
-//            } catch (e: Exception) {
-//                e.printStackTrace()
-//            }
-//        }
-//
-//        return root
+
 
         _binding = FragmentChannelBinding.inflate(inflater,container,false)
         return binding.root
@@ -52,14 +36,24 @@ class ChannelFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.rvChannellist.layoutManager
-
-
-        val channel = channelviewmodel.getchannellist(requireContext())
+        val channelList = channelviewmodel.getchannellist(requireContext())
     //    Log.d("Jens", channel.toString())
 
-        channel.forEach{
-            Log.d("Jens", it.nomo.toString())
+        binding.recyclerViewChannels.layoutManager = LinearLayoutManager(requireContext())
+       val channels =  channelList.groupBy {
+            it.nomo
+        }.map {
+            it.key
+       }
+
+
+        Log.d("dublicate", channels.toString())
+
+        val adapter = ToStriing_Adapter_Channels(requireContext(),channels)
+        binding.recyclerViewChannels.adapter = adapter
+
+        channels.forEach{
+            Log.d("Jens", it.toString())
         }
 
     }
