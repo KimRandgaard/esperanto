@@ -1,10 +1,6 @@
-package com.example.esperanto_menu.ui.channel
+package com.example.esperanto_menu.model.data
 
-import com.squareup.moshi.Json
-import java.io.FileDescriptor
-
-data class  Channel(
-
+data class Channels_Datas(
     val nomo: String,
     val plennomo: String,
     val hejmo: String,
@@ -12,5 +8,3 @@ data class  Channel(
     val dato: String,
     val teksto: String
 )
-
-

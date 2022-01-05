@@ -1,4 +1,4 @@
-package com.example.esperanto_menu.ui.network
+package com.example.esperanto_menu.model.network
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

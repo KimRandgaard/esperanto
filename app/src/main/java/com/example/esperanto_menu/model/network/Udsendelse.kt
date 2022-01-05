@@ -1,8 +1,6 @@
-package com.example.esperanto_menu.ui.channel
+package com.example.esperanto_menu.model.network
 
-import java.io.FileDescriptor
-
-data class Channels_Datas(
+data class Udsendelse(
     val nomo: String,
     val plennomo: String,
     val hejmo: String,

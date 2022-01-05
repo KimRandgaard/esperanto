@@ -4,18 +4,17 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.esperanto_menu.model.data.Channel
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import java.io.InputStream
-import java.lang.Exception
 
 class ChannelViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>()
     val text: LiveData<String> = _text
-
 
     private fun loadJson(context: Context): String {
         var input: InputStream? = null
@@ -40,7 +39,7 @@ class ChannelViewModel : ViewModel() {
 
     fun getchannellist(context: Context): List<Channel> {
         val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
-        val type = Types.newParameterizedType(List::class.java,Channel::class.java)
+        val type = Types.newParameterizedType(List::class.java, Channel::class.java)
         val jsonAdapter : JsonAdapter<List<Channel>> = moshi.adapter(type)
 
         val input = context.assets.open("radio.json")

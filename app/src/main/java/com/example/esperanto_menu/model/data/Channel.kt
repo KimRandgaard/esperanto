@@ -1,6 +1,6 @@
-package com.example.esperanto_menu.ui.network
+package com.example.esperanto_menu.model.data
 
-data class Udsendelse(
+data class  Channel(
     val nomo: String,
     val plennomo: String,
     val hejmo: String,
@@ -8,3 +8,5 @@ data class Udsendelse(
     val dato: String,
     val teksto: String
 )
+
+
