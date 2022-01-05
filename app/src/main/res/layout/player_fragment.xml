@@ -5,7 +5,7 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:layout_gravity="bottom"
+	android:layout_gravity="center_horizontal|center_vertical"
 	android:background=""
 	android:orientation="vertical"
 	tools:context="player.PlayerFragment">
@@ -107,20 +107,19 @@
 		android:id="@+id/udvidSkjulOmråde"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:gravity="bottom"
 		android:orientation="vertical">
 
 
-		<View
-			android:layout_width="match_parent"
-			android:layout_height="3dp"
-			android:layout_margin="8dp"
-			android:background=""
-			android:layerType="software" />
-
+		<!--
+			android:layerType="software" er nødvendig, ellers tegnes der en vandret
+			 streg i stedet for stiplet linje på Android 3+
+			-->
 
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:layout_marginTop="30dp"
 			android:gravity="center_vertical"
 			android:orientation="horizontal">
 
@@ -137,7 +136,7 @@
 			<SeekBar
 				android:id="@+id/seekBar"
 				android:layout_width="2dp"
-				android:layout_height="1dp"
+				android:layout_height="5dp"
 				android:layout_weight="1"
 				android:focusable="false"
 				android:max="100"
@@ -158,14 +157,10 @@
 
 		</LinearLayout>
 
-		<!--
-			android:layerType="software" er nødvendig, ellers tegnes der en vandret
-			 streg i stedet for stiplet linje på Android 3+
-			-->
-
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:layout_marginTop="30dp"
 			android:gravity="center"
 			android:orientation="horizontal">
 
@@ -198,25 +193,18 @@
 
 		</LinearLayout>
 
-		<View
-			android:layout_width="match_parent"
-			android:layout_height="3dp"
-			android:layout_marginLeft="8dp"
-			android:layout_marginRight="8dp"
-			android:background=""
-			android:layerType="software" />
-
 
 		<LinearLayout
-			android:layout_width="400dp"
+			android:layout_width="wrap_content"
 			android:layout_height="74dp"
+			android:layout_marginTop="15dp"
 			android:gravity="center_vertical"
 			android:orientation="horizontal">
 
 			<SeekBar
 				android:id="@+id/lydstyrke"
 				android:layout_width="421dp"
-				android:layout_height="wrap_content"
+				android:layout_height="match_parent"
 				android:layout_marginTop="16dp"
 				android:layout_marginBottom="16dp"
 				android:layout_weight="1"
