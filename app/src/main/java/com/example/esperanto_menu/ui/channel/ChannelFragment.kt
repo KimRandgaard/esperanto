@@ -55,7 +55,6 @@ class ChannelFragment : Fragment() {
         channels.forEach{
             Log.d("Jens", it.toString())
         }
-
     }
 
     override fun onDestroyView() {
