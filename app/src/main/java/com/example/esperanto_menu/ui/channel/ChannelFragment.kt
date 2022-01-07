@@ -7,14 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.esperanto_menu.databinding.FragmentChannelBinding
-import com.example.esperanto_menu.model.adapter.Channel_Adapter
-import com.example.esperanto_menu.model.adapter.ToStriing_Adapter_Channels
-import com.example.esperanto_menu.model.network.ImportApi
-import kotlinx.coroutines.launch
+import com.example.esperanto_menu.model.adapter.ToString_Adapter_Channels
 
 class ChannelFragment : Fragment() {
 
@@ -49,7 +44,7 @@ class ChannelFragment : Fragment() {
 
         Log.d("dublicate", channels.toString())
 
-        val adapter = ToStriing_Adapter_Channels(requireContext(),channels)
+        val adapter = ToString_Adapter_Channels(requireContext(),channels)
         binding.recyclerViewChannels.adapter = adapter
 
         channels.forEach{

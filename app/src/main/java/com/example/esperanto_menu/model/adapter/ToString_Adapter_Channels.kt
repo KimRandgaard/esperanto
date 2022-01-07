@@ -5,21 +5,16 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esperanto_menu.R
-import com.example.esperanto_menu.model.data.Channel
-import com.example.esperanto_menu.model.data.Channels_Datas
-import java.util.concurrent.TimeoutException
 
 
-class ToStriing_Adapter_Channels(
+class ToString_Adapter_Channels(
     private val context: Context,
     private val values: List<String>
 
-) : RecyclerView.Adapter<ToStriing_Adapter_Channels.ViewHolder>() {
+) : RecyclerView.Adapter<ToString_Adapter_Channels.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(context)
