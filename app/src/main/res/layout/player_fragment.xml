@@ -15,25 +15,28 @@
 		android:layout_width="410dp"
 		android:layout_height="300dp"
 		android:layout_marginBottom="30dp"
-		tools:src="@tools:sample/avatars" />
+		tools:src="@android:drawable/sym_def_app_icon" />
 
 	<LinearLayout
 		android:layout_width="match_parent"
-		android:layout_height="1dp"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/textView8"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="20dp"
+			android:text="Muzaiko" />
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="25dp"
 		android:contentDescription=""
 		android:gravity="center_vertical"
 		android:orientation="horizontal">
 
-
-		<ImageView
-			android:id="@+id/startStopKnap"
-			android:layout_width="60dp"
-			android:layout_height="44dp"
-			android:contentDescription=""
-			android:paddingTop="4dp"
-			android:paddingBottom="4dp"
-			android:scaleType="center"
-			android:src="" />
 
 		<!--
 			<Button
@@ -45,66 +48,29 @@
 		-->
 
 
-		<LinearLayout
-			android:layout_width="0px"
-			android:layout_height="match_parent"
-			android:layout_marginLeft="2dp"
-			android:layout_weight="1"
-			android:gravity="center_vertical"
-			android:orientation="vertical">
-
-			<LinearLayout
-				android:layout_width="wrap_content"
-				android:layout_height="28dp"
-				android:gravity="center_vertical">
-
-				<ImageView
-					android:id="@+id/kanallogo"
-					android:layout_width="wrap_content"
-					android:layout_height="28dp"
-					android:scaleType="fitStart"
-					android:src="" />
-
-
-				<TextView
-					android:id="@+id/direktetekst"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text=""
-					android:textColor="@color/menu_red" />
-
-			</LinearLayout>
-
-
-			<TextView
-				android:id="@+id/metainformation"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:singleLine="true"
-				android:text="Orientering på P1"
-				android:textColor="@color/white"
-				android:textSize="1dp"
-				tools:ignore="HardcodedText" />
-
-		</LinearLayout>
-
-		<ProgressBar
-			android:id="@+id/progressBar"
+		<TextView
+			android:id="@+id/textView4"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content" />
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="20dp"
+			android:layout_weight="1"
+			android:fontFamily="sans-serif-condensed-medium"
+			android:text="Muzaiko Radio"
+			android:textColor="#000000"
+			android:textSize="20sp" />
 
 		<ImageView
-			android:id="@+id/udvidSkjulKnap"
-			android:layout_width="44dp"
-			android:layout_height="match_parent"
-			android:padding="12dp"
-			android:scaleType="centerInside"
-			android:src="" />
+			android:id="@+id/imageView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="175dp"
+			android:layout_weight="1"
+			android:src="@drawable/like_heart" />
 
 	</LinearLayout>
 
 	<LinearLayout
-		android:id="@+id/udvidSkjulOmråde"
+		android:id="@+id/LinearLayout"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:gravity="bottom"
@@ -117,21 +83,12 @@
 			-->
 
 		<LinearLayout
+			android:id="@+id/TimeLine"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="30dp"
 			android:gravity="center_vertical"
 			android:orientation="horizontal">
-
-			<TextView
-				android:id="@+id/starttid"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="4dp"
-				android:text="15.45"
-				android:textColor="@color/menu_red"
-				android:textSize="12sp"
-				tools:ignore="HardcodedText" />
 
 			<SeekBar
 				android:id="@+id/seekBar"
@@ -143,77 +100,96 @@
 				android:progress="60"
 				android:progressDrawable="@drawable/seekbar_progress" />
 
-			<TextView
-				android:id="@+id/slutttid"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginRight="4dp"
-				android:importantForAccessibility="no"
-				android:text="10.30"
-				android:textColor="@color/menu_red"
-				android:textSize="12sp"
-				tools:ignore="HardcodedText" />
-
 
 		</LinearLayout>
 
 		<LinearLayout
-			android:layout_width="match_parent"
+			android:layout_width="448dp"
 			android:layout_height="wrap_content"
+			android:layout_marginTop="5dp"
+			android:layout_weight="1"
+			android:orientation="horizontal">
+
+			<TextView
+				android:id="@+id/starttid"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="7dp"
+				android:text="15.45"
+				android:textColor="@color/menu_red"
+				android:textSize="12sp"
+				tools:ignore="HardcodedText" />
+
+			<TextView
+				android:id="@+id/slutttid"
+				android:layout_width="365dp"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="4dp"
+				android:importantForAccessibility="no"
+				android:text="10.30"
+				android:textAlignment="textEnd"
+				android:textColor="@color/menu_red"
+				android:textSize="12sp"
+				tools:ignore="HardcodedText" />
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/PlayButtons"
+			android:layout_width="match_parent"
+			android:layout_height="67dp"
 			android:layout_marginTop="30dp"
 			android:gravity="center"
 			android:orientation="horizontal">
 
 			<ImageView
 				android:id="@+id/forrige"
-				android:layout_width="44dp"
-				android:layout_height="44dp"
+				android:layout_width="80dp"
+				android:layout_height="80dp"
 				android:layout_marginRight="1dp"
 				android:padding="12dp"
 				android:src="@drawable/radio_forrige" />
 
 			<ImageView
-				android:layout_width="44dp"
-				android:layout_height="44dp"
+				android:id="@+id/musicplay"
+				android:layout_width="125dp"
+				android:layout_height="125dp"
 				android:padding="4dp"
-				android:src="@drawable/afspiller_spil_normal" />
-
-			<ImageView
-				android:layout_width="44dp"
-				android:layout_height="44dp"
-				android:padding="4dp"
-				android:src="@drawable/afspiller_pause_normal" />
+				android:src="@drawable/start_stop" />
 
 			<ImageView
 				android:id="@+id/næste"
-				android:layout_width="44dp"
-				android:layout_height="44dp"
+				android:layout_width="80dp"
+				android:layout_height="80dp"
 				android:padding="12dp"
 				android:src="@drawable/radio_naeste" />
 
 		</LinearLayout>
 
-
 		<LinearLayout
-			android:layout_width="wrap_content"
-			android:layout_height="74dp"
-			android:layout_marginTop="15dp"
-			android:gravity="center_vertical"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
 			android:orientation="horizontal">
 
-			<SeekBar
-				android:id="@+id/lydstyrke"
-				android:layout_width="421dp"
-				android:layout_height="match_parent"
-				android:layout_marginTop="16dp"
-				android:layout_marginBottom="16dp"
+			<TextView
+				android:id="@+id/backward"
+				android:layout_width="21dp"
+				android:layout_height="20dp"
 				android:layout_weight="1"
-				android:focusable="false"
-				android:max="100"
-				android:progress="60" />
+				android:text="15 sec"
+				android:textAlignment="center" />
 
+			<TextView
+				android:id="@+id/forward"
+				android:layout_width="9dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:text="15 sec"
+				android:textAlignment="center" />
 
 		</LinearLayout>
+
+
 		<!--
 		android:layerType="software" er nødvendig, ellers tegnes der en vandret
 		 streg i stedet for stiplet linje på Android 3+
