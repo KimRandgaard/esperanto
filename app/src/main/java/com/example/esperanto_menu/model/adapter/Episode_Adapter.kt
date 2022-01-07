@@ -1,3 +1,4 @@
+/*
 package com.example.esperanto_menu.model.adapter
 
 import android.view.LayoutInflater
@@ -62,3 +63,4 @@ class Episode_Adapter: RecyclerView.Adapter<Episode_Adapter.ViewHolder>() {
 }
 
 
+*/
