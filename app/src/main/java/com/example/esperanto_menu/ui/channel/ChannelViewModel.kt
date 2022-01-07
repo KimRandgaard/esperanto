@@ -50,4 +50,13 @@ class ChannelViewModel : ViewModel() {
         return result
 
     }
+
+
+    fun getEpisodeList(){
+        TODO("Not yet implemented")
+
+       // titlelList
+       // lengthList
+       // descriptionList
+    }
 }
