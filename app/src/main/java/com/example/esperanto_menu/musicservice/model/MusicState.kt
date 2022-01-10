@@ -1,7 +1,9 @@
 
-package dtu.engtech.musicservice.model
+package com.example.esperanto_menu.musicservice.model
 
 enum class MusicState {
   PLAY,
-  STOP
+  STOP,
+  FORWARD,
+  BACKWARD
 }

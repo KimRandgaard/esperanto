@@ -6,4 +6,16 @@
     <string name="title_channel">Chennel</string>
     <string name="title_favorites">Favorites</string>
     <string name="title_search">Search</string>
+	<string name="hej">hej</string>
+	<string name="_15_sec">15 sec</string>
+	<string name="_15_sec_">15 sec</string>
+	<string name="muzaiko_radio">Muzaiko Radio</string>
+	<string name="play">play</string>
+	<string name="muzaiko">Muzaiko</string>
+	<string name="n_ste">næste</string>
+	<string name="mainpic">mainpic</string>
+	<string name="forrige">forrige</string>
+	<string name="like">like</string>
+	<string name="_15_sec">15 sec</string>
+	<string name="_15_sec">15 sec</string>
 </resources>

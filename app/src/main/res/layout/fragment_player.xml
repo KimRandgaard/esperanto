@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_gravity="center_horizontal|center_vertical"
+	android:background="@color/white"
+	android:orientation="vertical"
+	tools:context="musicservice.player.PlayerFragment">
+
+	<ImageView
+		android:id="@+id/mainpic"
+		android:layout_width="410dp"
+		android:layout_height="300dp"
+		android:layout_marginBottom="30dp"
+		android:contentDescription="@string/mainpic"
+		tools:src="@android:drawable/sym_def_app_icon" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/textView8"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="20dp"
+			android:text="@string/muzaiko" />
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="25dp"
+		android:contentDescription=""
+		android:gravity="center_vertical"
+		android:orientation="horizontal">
+
+
+		<!--
+			<Button
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:id="@+id/start_stop_pauseknap"
+					android:background="@drawable/kanalappendix_p1d"
+					/>
+		-->
+
+
+		<TextView
+			android:id="@+id/textView4"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="20dp"
+			android:layout_weight="1"
+			android:fontFamily="sans-serif-condensed-medium"
+			android:text="@string/muzaiko_radio"
+			android:textColor="#000000"
+			android:textSize="20sp" />
+
+		<ImageView
+			android:id="@+id/like"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="175dp"
+			android:layout_weight="1"
+			android:contentDescription="@string/like"
+			android:src="@drawable/like_heart" />
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/LinearLayout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="bottom"
+		android:orientation="vertical">
+
+
+		<!--
+			android:layerType="software" er nødvendig, ellers tegnes der en vandret
+			 streg i stedet for stiplet linje på Android 3+
+			-->
+
+		<LinearLayout
+			android:id="@+id/TimeLine"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="30dp"
+			android:gravity="center_vertical"
+			android:orientation="horizontal">
+
+			<SeekBar
+				android:id="@+id/seekBar"
+				android:layout_width="0dp"
+				android:layout_height="5dp"
+				android:layout_weight="1"
+				android:focusable="false"
+				android:max="100"
+				android:progress="60"
+				android:progressDrawable="@drawable/seekbar_progress" />
+
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="448dp"
+			android:layout_height="0dp"
+			android:layout_marginTop="5dp"
+			android:layout_weight="1"
+			android:orientation="horizontal">
+
+			<TextView
+				android:id="@+id/starttid"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="7dp"
+				android:text="15.45"
+				android:textColor="@color/menu_red"
+				android:textSize="12sp"
+				tools:ignore="HardcodedText" />
+
+			<TextView
+				android:id="@+id/slutttid"
+				android:layout_width="365dp"
+				android:layout_height="wrap_content"
+				android:layout_marginEnd="4dp"
+				android:importantForAccessibility="no"
+				android:text="10.30"
+				android:textAlignment="textEnd"
+				android:textColor="@color/menu_red"
+				android:textSize="12sp"
+				tools:ignore="HardcodedText" />
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/PlayButtons"
+			android:layout_width="match_parent"
+			android:layout_height="67dp"
+			android:layout_marginTop="30dp"
+			android:gravity="center"
+			android:orientation="horizontal">
+
+			<ImageView
+				android:id="@+id/forrige"
+				android:layout_width="80dp"
+				android:layout_height="80dp"
+				android:layout_marginEnd="1dp"
+				android:contentDescription="@string/forrige"
+				android:padding="12dp"
+				android:src="@drawable/radio_forrige" />
+
+			<ImageView
+				android:id="@+id/musicplay"
+				android:layout_width="125dp"
+				android:layout_height="125dp"
+				android:contentDescription="@string/play"
+				android:padding="4dp"
+				android:src="@drawable/start_stop" />
+
+			<ImageView
+				android:id="@+id/næste"
+				android:layout_width="80dp"
+				android:layout_height="80dp"
+				android:contentDescription="@string/n_ste"
+				android:padding="12dp"
+				android:src="@drawable/radio_naeste" />
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="horizontal">
+
+			<TextView
+				android:id="@+id/backward"
+				android:layout_width="21dp"
+				android:layout_height="20dp"
+				android:layout_weight="1"
+				android:text="@string/_15_sec"
+				android:textAlignment="center" />
+
+			<TextView
+				android:id="@+id/forward"
+				android:layout_width="9dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:text="@string/_15_sec"
+				android:textAlignment="center" />
+
+		</LinearLayout>
+
+
+		<!--
+		android:layerType="software" er nødvendig, ellers tegnes der en vandret
+		 streg i stedet for stiplet linje på Android 3+
+		-->
+	</LinearLayout>
+
+</LinearLayout>
