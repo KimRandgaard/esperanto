@@ -6,4 +6,6 @@
     <string name="title_channel">Channels</string>
     <string name="title_favorites">Favorites</string>
     <string name="title_search">Search</string>
+    <string name="title_episode">Episode</string>
+
 </resources>

@@ -15,7 +15,11 @@
         android:id="@+id/navigation_channels"
         android:name="com.example.esperanto_menu.ui.channel.ChannelFragment"
         android:label="@string/title_channel"
-        tools:layout="@layout/fragment_channel" />
+        tools:layout="@layout/fragment_channel" >
+        <action
+            android:id="@+id/action_navigation_channels_to_navigation_episodes"
+            app:destination="@id/navigation_episodes" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_favorite"
@@ -28,5 +32,12 @@
         android:name="com.example.esperanto_menu.ui.search.SearchFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/navigation_episodes"
+        android:name="com.example.esperanto_menu.ui.episodes.EpisodesFragments"
+        android:label="@string/title_episode"
+        tools:layout="@layout/specefic_channel" />
+
 
 </navigation>

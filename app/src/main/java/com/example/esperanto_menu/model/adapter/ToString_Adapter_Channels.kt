@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esperanto_menu.R
 import com.example.esperanto_menu.model.data.Channels_Datas
@@ -34,6 +35,9 @@ class ToString_Adapter_Channels(
     class ViewHolder(private val view: View) :
         RecyclerView.ViewHolder(view) {
 
+        private var channelString: String? = null
+
+
 
 
         init {
@@ -44,9 +48,14 @@ class ToString_Adapter_Channels(
                 //onItemClick?.invoke(ChannelList[adapterPosition])
 
                 val position : Int = adapterPosition
+                val action = R.id.action_navigation_channels_to_navigation_episodes
+
+
 
                 Log.d("Adapter", "onClick")
-                Toast.makeText(itemView.context, "You clicked on + ${position} +", Toast.LENGTH_SHORT).show()
+                Toast.makeText(itemView.context, "You clicked on + ${channelString} +", Toast.LENGTH_SHORT).show()
+
+
 
             }
         }
@@ -55,6 +64,7 @@ class ToString_Adapter_Channels(
         private val textView = view.findViewById<TextView>(R.id.channelName)
 
         fun bind(item: String) {
+            channelString = item
             textView.text = item.capitalize()
 
 
