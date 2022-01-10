@@ -55,7 +55,11 @@ class ToString_Adapter_Channels(
         private val textView = view.findViewById<TextView>(R.id.channelName)
 
         fun bind(item: String) {
-            textView.text= item
+            textView.text = item.capitalize()
+
+
+
+            Log.d("TOSTRINGADAPTER", "BIND")
         }
     }
 

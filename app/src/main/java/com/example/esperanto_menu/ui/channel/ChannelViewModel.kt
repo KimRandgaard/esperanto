@@ -1,9 +1,13 @@
 package com.example.esperanto_menu.ui.channel
 
 import android.content.Context
+import android.view.GestureDetector
+import android.view.MotionEvent
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.recyclerview.widget.RecyclerView
 import com.example.esperanto_menu.model.data.Channel
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
@@ -60,3 +64,4 @@ class ChannelViewModel : ViewModel() {
        // descriptionList
     }
 }
+
