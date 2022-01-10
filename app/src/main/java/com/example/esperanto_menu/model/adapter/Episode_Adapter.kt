@@ -1,6 +1,6 @@
-/*
 package com.example.esperanto_menu.model.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,58 +9,79 @@ import android.widget.Toast
 import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esperanto_menu.R
+import com.example.esperanto_menu.model.adapter.Episode_Adapter.ViewHolder
 import com.example.esperanto_menu.model.data.Channel
 
-class Episode_Adapter: RecyclerView.Adapter<Episode_Adapter.ViewHolder>() {
+class Episode_Adapter(
+    private val context: Context,
+    private val values1: List<Channel>
+    )
+    : RecyclerView.Adapter<ViewHolder>() {
 
-    //  private var titel = titlelList,
-    //  private var length = lengthList,
-    //  private var description = descriptionList,
+//      private var titel = titlelList,
+//      private var length = lengthList,
+//      private var description = descriptionList,
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Episode_Adapter.ViewHolder {
-        val v = LayoutInflater.from(parent.context)
-            .inflate(R.layout.specefic_episode_reciclerview, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val episodeInflater = LayoutInflater.from(context)
+        return ViewHolder(
+            episodeInflater.inflate(R.layout.specefic_episode, parent, false)
+        )
 
-        return ViewHolder(v)
+        //val v = LayoutInflater.from(parent.context)
+        //    .inflate(R.layout.specefic_episode_reciclerview, parent, false)
+
+        //return ViewHolder(v)
     }
 
-    override fun onBindViewHolder(holder: Episode_Adapter.ViewHolder, position: Int) {
-        holder.episodeName.text = titel[position]
-        holder.episodeLength.text = length[position]
-        holder.episodeDescription = description[position]
+    override fun onBindViewHolder(newholder: ViewHolder, newposition: Int) {
+        //holder.episodeName.text = titel[position]
+        //holder.episodeLength.text = length[position]
+        //holder.episodeDescription = description[position]
+
+        val newItem = values1[newposition]
+        newholder.Bind(newItem)
+
     }
 
-    override fun getItemCount(): Int {
-        return titel.size
-    }
+    override fun getItemCount(): Int = values1.size
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(private val itemView: View) :
+        RecyclerView.ViewHolder(itemView) {
 
-        var episodeLength: TextView
-        var episodeName: TextView
-        var episodeDescription: TextView
+        private val teksto = itemView.findViewById<TextView>(R.id.episodeDescription_episode)
+        private val episodeName = itemView.findViewById<TextView>(R.id.episodeName_episode)
+        private val channelName = itemView.findViewById<TextView>(R.id.channelName_OnEpisode)
 
-        init {
-            episodeLength = itemView.findViewById(R.id.episodeLenght)
-            episodeName = itemView.findViewById(R.id.episodeName)
-            episodeDescription = itemView.findViewById(R.id.episodeDescription)
-
-
-            fun bind(item: Channel) {
-                episodeName.text = item.plennomo
-                //  episodeLength.text = item.(find en måde at få tiden /længen på mp3filen)
-                episodeDescription.text = item.teksto
-
-            }
-            itemView.setOnClickListener {
-                Toast.makeText(itemView.context, "you clicked on ${episodeName}", Toast.LENGTH_LONG)
-                    .show()
-                //skal sendes videre til den givne episode sidde.
-            }
+        fun Bind(item: Channel){
+            teksto.text = item.teksto.toString()
+            episodeName.text = item.dato.toString()
+            channelName.text = item.nomo.toString()
         }
+
+
+//        var episodeLength: TextView
+//        var episodeName: TextView
+//        var episodeDescription: TextView
+
+//        init {
+//            episodeLength = itemView.findViewById(R.id.episodeLenght)
+//            episodeName = itemView.findViewById(R.id.episodeName)
+//            episodeDescription = itemView.findViewById(R.id.episodeDescription)
+//
+//
+//            fun bind(item: Channel) {
+//                episodeName.text = item.plennomo
+//                //  episodeLength.text = item.(find en måde at få tiden /længen på mp3filen)
+//                episodeDescription.text = item.teksto
+//
+//            }
+//            itemView.setOnClickListener {
+//                Toast.makeText(itemView.context, "you clicked on ${episodeName}", Toast.LENGTH_LONG)
+//                    .show()
+//                //skal sendes videre til den givne episode sidde.
+//            }
+//        }
 
     }
 }
-
-
-*/
