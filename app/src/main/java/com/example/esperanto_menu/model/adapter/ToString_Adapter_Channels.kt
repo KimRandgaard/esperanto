@@ -8,10 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esperanto_menu.R
 import com.example.esperanto_menu.model.data.Channels_Datas
+import androidx.navigation.fragment.findNavController
+import com.example.esperanto_menu.ui.home.HomeFragment
 
 
 class ToString_Adapter_Channels(
@@ -30,9 +34,31 @@ class ToString_Adapter_Channels(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
         holder.bind(item)
+
+
+        holder.itemView.setOnClickListener {
+            //onItemClick?.invoke(ChannelList[adapterPosition])
+
+          //  val position : Int = adapterPosition
+
+
+
+            val action = R.id.action_navigation_channels_to_navigation_episodes
+
+
+
+            holder.view.findNavController().navigate(action)
+
+
+            Log.d("Adapter", "onClick")
+            Toast.makeText(holder.itemView.context, "You clicked on + ${item} +", Toast.LENGTH_SHORT).show()
+
+
+
+        }
     }
 
-    class ViewHolder(private val view: View) :
+    class ViewHolder(val view: View) :
         RecyclerView.ViewHolder(view) {
 
         private var channelString: String? = null
@@ -44,20 +70,7 @@ class ToString_Adapter_Channels(
 
 
 
-            itemView.setOnClickListener {
-                //onItemClick?.invoke(ChannelList[adapterPosition])
 
-                val position : Int = adapterPosition
-                val action = R.id.action_navigation_channels_to_navigation_episodes
-
-
-
-                Log.d("Adapter", "onClick")
-                Toast.makeText(itemView.context, "You clicked on + ${channelString} +", Toast.LENGTH_SHORT).show()
-
-
-
-            }
         }
 
 

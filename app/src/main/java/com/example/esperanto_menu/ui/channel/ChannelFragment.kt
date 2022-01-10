@@ -55,6 +55,7 @@ class ChannelFragment : Fragment() {
             it.key
        }
 
+/*
 
         recycler = view.findViewById(R.id.recyclerViewChannels)
         recycler.layoutManager = LinearLayoutManager(context)
@@ -72,6 +73,7 @@ class ChannelFragment : Fragment() {
             Toast.makeText(context, "Test", Toast.LENGTH_SHORT).show()
 
         }
+*/
 
 
 
