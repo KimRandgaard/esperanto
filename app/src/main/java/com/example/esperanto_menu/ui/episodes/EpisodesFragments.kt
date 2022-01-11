@@ -7,12 +7,15 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.esperanto_menu.R
 import com.example.esperanto_menu.databinding.SpeceficChannelBinding
 import com.example.esperanto_menu.model.adapter.Channel_Adapter
 import com.example.esperanto_menu.model.adapter.Episode_Adapter
 import com.example.esperanto_menu.model.adapter.ToString_Adapter_Channels
+import com.example.esperanto_menu.model.adapter.ToString_Adapter_Episode
 import com.example.esperanto_menu.model.data.Channel
 
 class EpisodesFragments : Fragment() {
@@ -40,13 +43,22 @@ class EpisodesFragments : Fragment() {
         val episodeList = episodesviewmodel.getEpisodeList(requireContext())
 
         binding.recyclerViewEpisodes.layoutManager = LinearLayoutManager(requireContext())
-        val episode = episodeList.groupBy{
+        val episode = episodeList.groupBy {
             it.nomo
         }.map {
             it.key
         }
-        val adapter = ToString_Adapter_Episodes(requireContext(), episode)
-        }
-    }
+        val adapter = ToString_Adapter_Episode(requireContext(), episode)
 
-}
+//        binding.VundetTilStart.setOnClickListener {
+//            findNavController().navigate(R.id.action_gameWon_to_startGameFragment)
+//    }
+        binding.backButton.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_episodes_to_navigation_channels)
+        }
+
+
+        }
+
+
+    }

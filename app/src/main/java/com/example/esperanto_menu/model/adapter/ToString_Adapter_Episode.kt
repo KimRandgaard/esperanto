@@ -34,20 +34,12 @@ class ToString_Adapter_Episode(
 
             //  val position : Int = adapterPosition
 
+            val back = R.id.action_navigation_episodes_to_navigation_channels
 
-
-          //  val action = R.id.action_navigation_specific_channel_to_navigation_episodes
-
-
-
-            //holder.view.findNavController().navigate(action)
-
+            holder.view.findNavController().navigate(back)
 
             Log.d("Adapter", "onClick")
             Toast.makeText(holder.itemView.context, "You clicked on + ${item} +", Toast.LENGTH_SHORT).show()
-
-
-
         }
     }
 
@@ -61,19 +53,12 @@ class ToString_Adapter_Episode(
 
         init {
 
-
-
-
         }
-
-
         private val textView = view.findViewById<TextView>(R.id.episodeName)
 
         fun bind(item: String) {
             episodeString = item
             textView.text = item.capitalize()
-
-
 
             Log.d("TOSTRINGADAPTER", "BIND")
         }

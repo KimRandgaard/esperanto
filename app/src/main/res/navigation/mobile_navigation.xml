@@ -37,7 +37,11 @@
         android:id="@+id/navigation_episodes"
         android:name="com.example.esperanto_menu.ui.episodes.EpisodesFragments"
         android:label="@string/title_episode"
-        tools:layout="@layout/specefic_channel" />
+        tools:layout="@layout/specefic_channel" >
+        <action
+            android:id="@+id/action_navigation_episodes_to_navigation_channels"
+            app:destination="@id/navigation_channels" />
+    </fragment>
 
 
 </navigation>
