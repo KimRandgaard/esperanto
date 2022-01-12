@@ -1,7 +1,6 @@
 package com.example.esperanto_menu.ui.episodes
 
 import android.os.Bundle
-import android.text.Layout
 import android.view.View
 import android.view.ViewGroup
 import android.view.LayoutInflater
@@ -13,10 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esperanto_menu.R
 import com.example.esperanto_menu.databinding.SpeceficChannelBinding
-import com.example.esperanto_menu.model.adapter.Channel_Adapter
 import com.example.esperanto_menu.model.adapter.Episode_Adapter
-import com.example.esperanto_menu.model.adapter.ToString_Adapter_Channels
-import com.example.esperanto_menu.model.adapter.ToString_Adapter_Episode
 import com.example.esperanto_menu.model.data.Channel
 import com.example.esperanto_menu.viewModel.EsperantoViewModel
 
@@ -51,7 +47,7 @@ class EpisodesFragments : Fragment() {
         val adapter = Episode_Adapter(requireContext(), episodeList)
         binding.recyclerViewEpisodes.adapter = adapter
 
-        binding.speceficChannelName.text = navigationArgs.channelName
+        binding.speceficChannelName.text = navigationArgs.channelName.capitalize()
 
 //        binding.VundetTilStart.setOnClickListener {
 //            findNavController().navigate(R.id.action_gameWon_to_startGameFragment)

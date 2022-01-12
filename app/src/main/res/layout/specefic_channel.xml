@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -45,18 +45,19 @@
         tools:text="Channel Name"
         />
 
+
     <TextView
         android:id="@+id/channelInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/speceficChannelName"
-        android:padding="4dp"
+        android:layout_width="394dp"
+        android:layout_height="65dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:padding="4dp"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
-        tools:text="Muzaiko estas tuttempa tutmonda tutmojosa tutesperanta retradio-kanalo! Muzaiko ludas por vi 24 horojn en tago muzikon, programerojn, novaĵojn, informojn, raportojn, arkivaĵojn kaj multe pli!"
-        />
-
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speceficChannelName"
+        android:text="Here will be the description of the channel, but the source fill we import from, do not have any data on this, only description of the specefic episode." />
 
     <ImageView
         android:id="@+id/favortitSpeceficChannel"
@@ -65,7 +66,9 @@
         android:layout_margin="12dp"
         android:src="@drawable/favorite_empty"
         app:layout_constraintRight_toLeftOf="@id/shareChannel"
-        app:layout_constraintTop_toBottomOf="@id/channelPicture" />
+        app:layout_constraintTop_toBottomOf="@id/channelPicture"
+        android:clickable="true"
+        android:focusable="true"/>
 
     <androidx.constraintlayout.utils.widget.ImageFilterButton
         android:id="@+id/shareChannel"
@@ -75,7 +78,9 @@
         android:layout_marginRight="8dp"
         android:src="@drawable/share"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/channelPicture" />
+        app:layout_constraintTop_toBottomOf="@id/channelPicture"
+        android:clickable="true"
+        android:focusable="true"/>
 
 
     <ImageView
@@ -87,6 +92,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:focusable="true"
         />
 
 
@@ -114,18 +121,17 @@
         app:layout_constraintLeft_toRightOf="@id/playIcon"
         app:layout_constraintRight_toRightOf="@id/playChannelButton"
         app:layout_constraintTop_toTopOf="@id/playChannelButton"
-        tools:text="Auskultu Vive!" />
+        android:text="Auskultu Vive!" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewEpisodes"
-        android:layout_width="386dp"
-        android:layout_height="310dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_width="wrap_content"
+        android:layout_height="330dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/playChannelButton"
-        app:layout_constraintVertical_bias="1" />
+        tools:listitem="@layout/specefic_episode_reciclerview" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
