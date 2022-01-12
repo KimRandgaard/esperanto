@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -29,9 +30,9 @@ class SearchFragment : Fragment() {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.search
+        val searchView: SearchView = binding.searchView
         viewmodel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+            // searchView.text = it
         })
         return root
     }
