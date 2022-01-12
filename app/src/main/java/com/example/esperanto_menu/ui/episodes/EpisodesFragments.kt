@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esperanto_menu.R
@@ -17,15 +18,17 @@ import com.example.esperanto_menu.model.adapter.Episode_Adapter
 import com.example.esperanto_menu.model.adapter.ToString_Adapter_Channels
 import com.example.esperanto_menu.model.adapter.ToString_Adapter_Episode
 import com.example.esperanto_menu.model.data.Channel
+import com.example.esperanto_menu.viewModel.EsperantoViewModel
 
 class EpisodesFragments : Fragment() {
 
     private var _binding: SpeceficChannelBinding? = null
     private val binding get() = _binding!!
-    private val episodesviewmodel: EpisodesViewModel by viewModels()
+    private val viewmodel: EsperantoViewModel by viewModels()
     lateinit var recyclerview : RecyclerView
     private lateinit var myAdapter : Episode_Adapter
     private lateinit var list: ArrayList<Channel>
+    private val navigationArgs: EpisodesFragmentsArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,15 +43,15 @@ class EpisodesFragments : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val episodeList = episodesviewmodel.getEpisodeList(requireContext())
+        val episodeList = viewmodel.getEpisodesByChannel(navigationArgs.channelName,requireContext())
+
 
         binding.recyclerViewEpisodes.layoutManager = LinearLayoutManager(requireContext())
-        val episode = episodeList.groupBy {
-            it.nomo
-        }.map {
-            it.key
-        }
-        val adapter = ToString_Adapter_Episode(requireContext(), episode)
+
+        val adapter = Episode_Adapter(requireContext(), episodeList)
+        binding.recyclerViewEpisodes.adapter = adapter
+
+        binding.speceficChannelName.text = navigationArgs.channelName
 
 //        binding.VundetTilStart.setOnClickListener {
 //            findNavController().navigate(R.id.action_gameWon_to_startGameFragment)

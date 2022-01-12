@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.esperanto_menu.R
 import com.example.esperanto_menu.model.data.Channels_Datas
 import androidx.navigation.fragment.findNavController
+import com.example.esperanto_menu.ui.channel.ChannelFragmentDirections
 import com.example.esperanto_menu.ui.home.HomeFragment
 
 
@@ -43,9 +44,10 @@ class ToString_Adapter_Channels(
 
 
 
-            val action = R.id.action_navigation_channels_to_navigation_episodes
 
 
+         val action = ChannelFragmentDirections.actionNavigationChannelsToNavigationEpisodes(channelName = item)
+             //R.id.action_navigation_channels_to_navigation_episodes
 
             holder.view.findNavController().navigate(action)
 

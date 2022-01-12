@@ -25,7 +25,7 @@ class Episode_Adapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val episodeInflater = LayoutInflater.from(context)
         return ViewHolder(
-            episodeInflater.inflate(R.layout.specefic_episode, parent, false)
+            episodeInflater.inflate(R.layout.specefic_episode_reciclerview, parent, false)
         )
 
         //val v = LayoutInflater.from(parent.context)
@@ -49,14 +49,16 @@ class Episode_Adapter(
     class ViewHolder(private val itemView: View) :
         RecyclerView.ViewHolder(itemView) {
 
-        private val teksto = itemView.findViewById<TextView>(R.id.episodeDescription_episode)
-        private val episodeName = itemView.findViewById<TextView>(R.id.episodeName_episode)
-        private val channelName = itemView.findViewById<TextView>(R.id.channelName_OnEpisode)
+        private val teksto = itemView.findViewById<TextView>(R.id.episodeDescription)
+        private val episodeName = itemView.findViewById<TextView>(R.id.episodeName)
+       // private val episodeDate = itemView.findViewById<TextView>(R.id.)
+       // private val channelName = itemView.findViewById<TextView>(R.id.channelName_OnEpisode)
 
         fun Bind(item: Channel){
-            teksto.text = item.teksto.toString()
-            episodeName.text = item.dato.toString()
-            channelName.text = item.nomo.toString()
+            teksto.text = item.teksto
+            episodeName.text = item.plennomo
+
+           // channelName.text = item.nomo.toString()
         }
 
 

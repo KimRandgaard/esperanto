@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esperanto_menu.R
@@ -15,12 +16,13 @@ import com.example.esperanto_menu.databinding.FragmentChannelBinding
 import com.example.esperanto_menu.model.adapter.Channel_Adapter
 import com.example.esperanto_menu.model.adapter.ToString_Adapter_Channels
 import com.example.esperanto_menu.model.data.Channel
+import com.example.esperanto_menu.viewModel.EsperantoViewModel
 
 class ChannelFragment : Fragment() {
 
     private var _binding: FragmentChannelBinding? = null
     private val binding get() = _binding!!
-    private val channelviewmodel: ChannelViewModel by viewModels()
+    private val viewmodel: EsperantoViewModel by viewModels()
     lateinit var recycler : RecyclerView
     private lateinit var myAdapater : Channel_Adapter
     private lateinit var list: ArrayList<Channel>
@@ -30,10 +32,6 @@ class ChannelFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
-
-
 
         _binding = FragmentChannelBinding.inflate(inflater,container,false)
         return binding.root
@@ -45,7 +43,7 @@ class ChannelFragment : Fragment() {
 
 
 
-        val channelList = channelviewmodel.getchannellist(requireContext())
+        val channelList = viewmodel.getchannellist(requireContext())
     //    Log.d("Jens", channel.toString())
 
         binding.recyclerViewChannels.layoutManager = LinearLayoutManager(requireContext())
