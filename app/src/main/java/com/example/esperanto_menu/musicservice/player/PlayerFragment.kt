@@ -1,6 +1,5 @@
 package com.example.esperanto_menu.musicservice.player
 
-import android.app.Activity
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
@@ -55,10 +54,10 @@ class PlayerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.musicplay.setOnClickListener {
+        binding.btnPlayMusic.setOnClickListener {
             sendCommandToBoundService(MusicState.PLAY)
         }
-        binding.musicplay.setOnClickListener {
+        binding.btnStopMusic.setOnClickListener {
             sendCommandToBoundService(MusicState.STOP)
         }
     }
@@ -99,8 +98,8 @@ class PlayerFragment : Fragment() {
     private fun enableButtons(state: MusicState) {
         val songPlays = state == MusicState.PLAY
         with(binding) {
-            musicplay.isEnabled = !songPlays
-            musicplay.isEnabled = songPlays
+            btnPlayMusic.isEnabled = !songPlays
+            btnStopMusic.isEnabled = songPlays
         }
     }
 

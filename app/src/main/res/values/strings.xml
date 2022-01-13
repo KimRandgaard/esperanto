@@ -3,7 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="title_channel">Chennel</string>
+    <string name="title_channel">Channel</string>
     <string name="title_favorites">Favorites</string>
     <string name="title_search">Search</string>
 	<string name="hej">hej</string>
@@ -16,6 +16,8 @@
 	<string name="mainpic">mainpic</string>
 	<string name="forrige">forrige</string>
 	<string name="like">like</string>
-	<string name="_15_sec">15 sec</string>
-	<string name="_15_sec">15 sec</string>
+	<string name="test">test</string>
+	<string name="button">Button</string>
+	<string name="cd_play_icon">Play music icon</string>
+	<string name="cd_stop_icon">Stop music icon</string>
 </resources>

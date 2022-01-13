@@ -36,7 +36,7 @@ class MusicService : Service() {
     }
 
     private fun initializeMediaPlayer() {
-        if (!songs.isEmpty()) {
+        if (songs.isNotEmpty()) {
             musicMediaPlayer = MediaPlayer.create(this, songs.first()).apply {
                 isLooping = true
             }
