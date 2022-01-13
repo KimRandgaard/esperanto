@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.esperanto_menu.R
 import com.example.esperanto_menu.model.adapter.Episode_Adapter.ViewHolder
 import com.example.esperanto_menu.model.data.Channel
+import com.example.esperanto_menu.util.getDuration
 
 class Episode_Adapter(
     private val context: Context,
@@ -46,7 +47,7 @@ class Episode_Adapter(
         fun Bind(item: Channel){
             teksto.text = item.teksto
             episodeName.text = item.plennomo +" "+ item.dato
-           // episodeLength.text = item.
+            episodeLength.text = getDuration(item.mp3fajlo)
 
         }
 
