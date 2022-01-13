@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">esperanto_menu</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Hejmo</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="title_channel">Channels</string>
-    <string name="title_favorites">Favorites</string>
-    <string name="title_search">Search</string>
+    <string name="title_channel">Kanaloj</string>
+    <string name="title_favorites">Favoritoj</string>
+    <string name="title_search">Serĉi</string>
     <string name="title_episode">Episode</string>
 
 </resources>
