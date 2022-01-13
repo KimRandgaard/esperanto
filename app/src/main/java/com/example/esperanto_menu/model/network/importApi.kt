@@ -17,6 +17,8 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
+
+//Overvej at bruge data.Channel i stedet for "network.Udsendelse", da det er en redudant klasse. Det samme med "data.Udsendelse.kt" også redudant.
 interface RadioService {
     @GET("/radio2.json")
     suspend fun getRadio(): List<Udsendelse>

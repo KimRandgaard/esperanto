@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,7 +23,7 @@ class ChannelFragment : Fragment() {
 
     private var _binding: FragmentChannelBinding? = null
     private val binding get() = _binding!!
-    private val viewmodel: EsperantoViewModel by viewModels()
+    private val viewmodel: EsperantoViewModel by activityViewModels()
     lateinit var recycler : RecyclerView
     private lateinit var myAdapater : Channel_Adapter
     private lateinit var list: ArrayList<Channel>
