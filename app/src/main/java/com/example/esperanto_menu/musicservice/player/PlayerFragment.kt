@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
 import android.os.Bundle
+import android.os.Handler
 import android.os.IBinder
 import android.view.LayoutInflater
 import android.view.View
@@ -22,7 +23,6 @@ class PlayerFragment : Fragment() {
     private val binding: FragmentPlayerBinding by lazy {
         FragmentPlayerBinding.inflate(layoutInflater)
     }
-
     private val viewModel: PlayerViewModel by lazy {
         ViewModelProvider(this)[PlayerViewModel::class.java]
     }
@@ -50,6 +50,8 @@ class PlayerFragment : Fragment() {
     ): View {
         _binding = FragmentPlayerBinding.inflate(inflater, container, false)
         return binding.root
+
+
 }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
