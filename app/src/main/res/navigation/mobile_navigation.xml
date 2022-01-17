@@ -33,6 +33,22 @@
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
 
+
+    <fragment
+        android:id="@+id/navigation_specefic_Episode"
+        android:name="com.example.esperanto_menu.ui.episodes.SpeceficEpisodeFragment"
+        android:label="@string/title_specefic_episode"
+        tools:layout="@layout/specefic_episode" >
+        <argument
+            android:name="episodeName"
+            android:defaultValue=""
+            app:argType="string"
+            />
+        <action
+            android:id="@+id/action_navigation_specefic_Episode_to_navigation_episodes"
+            app:destination="@id/navigation_episodes" />
+    </fragment>
+
     <fragment
         android:id="@+id/navigation_episodes"
         android:name="com.example.esperanto_menu.ui.episodes.EpisodesFragments"
@@ -46,7 +62,14 @@
         <action
             android:id="@+id/action_navigation_episodes_to_navigation_channels"
             app:destination="@id/navigation_channels" />
+        <action
+            android:id="@+id/action_navigation_episodes_to_navigation_specefic_Episode"
+            app:destination="@id/navigation_specefic_Episode" />
+
+
     </fragment>
+
+
 
 
 </navigation>
