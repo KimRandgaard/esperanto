@@ -46,7 +46,8 @@ class SpeceficEpisodeFragment: Fragment() {
             channelNameOnEpisode.text = episode.nomo
             episodeNameEpisode.text = episode.plennomo
             episodeDescriptionEpisode.text = episode.teksto
-            episodeLenghtEpisode.text = getDuration(episode.mp3fajlo)
+           // episodeLenghtEpisode.text = getDuration(episode.mp3fajlo)
+            // might need another method to get leanght of episode!
 
                     }
 
