@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.esperanto_menu.databinding.FragmentSearchBinding
@@ -49,6 +50,12 @@ class SearchFragment : Fragment() {
 
         binding.searchList.adapter = searchAdapter
 
+        binding.searchList.setOnItemClickListener { parent, view, position, id ->
+            val value = channelList[position]
+            Toast.makeText(requireContext(), value.teksto, Toast.LENGTH_SHORT).show()
+        }
+        
+        
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
 
