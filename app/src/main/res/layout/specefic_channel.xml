@@ -121,7 +121,7 @@
         app:layout_constraintLeft_toRightOf="@id/playIcon"
         app:layout_constraintRight_toRightOf="@id/playChannelButton"
         app:layout_constraintTop_toTopOf="@id/playChannelButton"
-        android:text="Auskultu Vive!" />
+        android:text="Aŭskultu vive!" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewEpisodes"
