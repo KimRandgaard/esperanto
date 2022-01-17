@@ -10,11 +10,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esperanto_menu.R
-import com.example.esperanto_menu.databinding.SpeceficChannelBinding
 import com.example.esperanto_menu.databinding.SpeceficEpisodeBinding
-import com.example.esperanto_menu.model.adapter.Episode_Adapter
-import com.example.esperanto_menu.model.adapter.Specefik_Episode_Adapter
 import com.example.esperanto_menu.model.data.Channel
+import com.example.esperanto_menu.util.getDuration
 import com.example.esperanto_menu.viewModel.EsperantoViewModel
 
 class SpeceficEpisodeFragment: Fragment() {
@@ -23,7 +21,6 @@ class SpeceficEpisodeFragment: Fragment() {
     private val binding get() = _binding!!
     private val viewmodel: EsperantoViewModel by viewModels()
     lateinit var recyclerview : RecyclerView
-    private lateinit var myAdapter : Specefik_Episode_Adapter
     private lateinit var list: ArrayList<Channel>
     private val navigationArgs: SpeceficEpisodeFragmentArgs by navArgs()
 
@@ -40,19 +37,24 @@ class SpeceficEpisodeFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
 
-        val episode = viewmodel.getEpisodesByChannel(navigationArgs.episodeName,requireContext())
+        val episode = viewmodel.getEpisode(navigationArgs.episodeName,requireContext())
 
         binding.episodeNameEpisode.text = navigationArgs.episodeName.capitalize()
 
-      //  val adapter = Specefik_Episode_Adapter(requireContext(),episode)
+        binding.apply {
 
+            channelNameOnEpisode.text = episode.nomo
+            episodeNameEpisode.text = episode.plennomo
+            episodeDescriptionEpisode.text = episode.teksto
+            episodeLenghtEpisode.text = getDuration(episode.mp3fajlo)
+
+                    }
+
+        val action = SpeceficEpisodeFragmentDirections.actionNavigationSpeceficEpisodeToNavigationEpisodes(episode.nomo)
 
         binding.backButtonEpisode.setOnClickListener{
-            findNavController().navigate(R.id.action_navigation_specefic_Episode_to_navigation_episodes)
+            findNavController().navigate(action)
 
-//            TODO(
-//                //implement arg. back button, so recyclerview works on channel list
-//        // )
         }
 
     }
