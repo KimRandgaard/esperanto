@@ -1,11 +1,5 @@
 <resources>
-    <string name="app_name">esperanto_menu</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_channel">Channel</string>
-    <string name="title_favorites">Favorites</string>
-    <string name="title_search">Search</string>
+
 	<string name="hej">hej</string>
 	<string name="_15_sec">15 sec</string>
 	<string name="_15_sec_">15 sec</string>
@@ -20,4 +14,16 @@
 	<string name="button">Button</string>
 	<string name="cd_play_icon">Play music icon</string>
 	<string name="cd_stop_icon">Stop music icon</string>
+	<string name="specific_episode">Specifik Episode</string>
+
+	<string name="app_name">EsperantoRadio</string>
+	<string name="title_home">Hejmo</string>
+	<string name="title_dashboard">Dashboard</string>
+	<string name="title_notifications">Notifications</string>
+	<string name="title_channel">Kanaloj</string>
+	<string name="title_favorites">Favoritoj</string>
+	<string name="title_search">Serĉi</string>
+	<string name="title_episode">Elsendoj</string>
+	<string name="title_specefic_episode">Episode Episode</string>
+
 </resources>

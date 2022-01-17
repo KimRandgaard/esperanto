@@ -29,7 +29,7 @@
 			android:layout_width="@dimen/optionsDim"
 			android:layout_height="@dimen/optionsDim"
 			android:layout_marginStart="100dp"
-			android:background="@drawable/background_btn_play"
+			android:background="@drawable/play_pause"
 			android:contentDescription="@string/cd_play_icon"
 			android:enabled="true"
 			android:scaleType="centerCrop"
