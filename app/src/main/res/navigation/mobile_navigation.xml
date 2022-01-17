@@ -79,6 +79,11 @@
         android:name="com.example.esperanto_menu.musicservice.player.PlayerFragment"
         android:label="@string/play"
         tools:layout="@layout/fragment_player" >
+        <argument
+            android:name="episodeName"
+            android:defaultValue=""
+            app:argType="string"
+            />
         <action
             android:id="@+id/action_player_to_navigation_specefic_Episode"
             app:destination="@id/navigation_specefic_Episode" />
