@@ -34,20 +34,20 @@ class Specefik_Episode_Adapter (
     override fun getItemCount(): Int = values2.size
 
 
-    class ViewHolder(private val itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(val view: View) :
+        RecyclerView.ViewHolder(view) {
 
-        private val nomo = itemView.findViewById<TextView>(R.id.channelName_OnEpisode)
-        private val teksto = itemView.findViewById<TextView>(R.id.episodeDescription_episode)
-        private val episodeName = itemView.findViewById<TextView>(R.id.episodeName_episode)
-        private val episodeLength = itemView.findViewById<TextView>(R.id.episodeLenght_episode)
+        private val nomo = view.findViewById<TextView>(R.id.channelName_OnEpisode)
+        private val teksto = view.findViewById<TextView>(R.id.episodeDescription_episode)
+        private val episodeName = view.findViewById<TextView>(R.id.episodeName_episode)
+        private val episodeLength = view.findViewById<TextView>(R.id.episodeLenght_episode)
 
         fun Bind(item: Channel) {
             nomo.text = item.nomo
             teksto.text = item.teksto
             episodeName.text = item.plennomo + " " + item.dato
             episodeLength.text = getDuration(item.mp3fajlo)
-
+//todo(get this showen!!!!!)
         }
     }
 }

@@ -49,6 +49,10 @@ class SpeceficEpisodeFragment: Fragment() {
 
         binding.backButtonEpisode.setOnClickListener{
             findNavController().navigate(R.id.action_navigation_specefic_Episode_to_navigation_episodes)
+
+//            TODO(
+//                //implement arg. back button, so recyclerview works on channel list
+//        // )
         }
 
     }
