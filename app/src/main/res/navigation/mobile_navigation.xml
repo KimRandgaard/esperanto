@@ -32,11 +32,6 @@
         android:name="com.example.esperanto_menu.ui.search.SearchFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
-    <fragment
-        android:id="@+id/playerFragment"
-        android:name="com.example.esperanto_menu.musicservice.player.PlayerFragment"
-        android:label="PlayerFragment" />
-
 
     <fragment
         android:id="@+id/navigation_specefic_Episode"
@@ -51,6 +46,9 @@
         <action
             android:id="@+id/action_navigation_specefic_Episode_to_navigation_episodes"
             app:destination="@id/navigation_episodes" />
+        <action
+            android:id="@+id/action_navigation_specefic_Episode_to_player"
+            app:destination="@id/player" />
     </fragment>
 
     <fragment
@@ -69,11 +67,22 @@
         <action
             android:id="@+id/action_navigation_episodes_to_navigation_specefic_Episode"
             app:destination="@id/navigation_specefic_Episode" />
+        <action
+            android:id="@+id/action_navigation_episodes_to_player"
+            app:destination="@id/player" />
 
 
     </fragment>
 
-
+    <fragment
+        android:id="@+id/player"
+        android:name="com.example.esperanto_menu.musicservice.player.PlayerFragment"
+        android:label="@string/play"
+        tools:layout="@layout/fragment_player" >
+        <action
+            android:id="@+id/action_player_to_navigation_specefic_Episode"
+            app:destination="@id/navigation_specefic_Episode" />
+    </fragment>
 
 
 </navigation>

@@ -56,12 +56,12 @@ class PlayerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnPlayMusic.setOnClickListener {
+        binding.playPause.setOnClickListener {
             sendCommandToBoundService(MusicState.PLAY)
         }
-        binding.btnStopMusic.setOnClickListener {
-            sendCommandToBoundService(MusicState.STOP)
-        }
+//        binding.btnStopMusic.setOnClickListener {
+//            sendCommandToBoundService(MusicState.STOP)
+//        }
     }
 
     override fun onStart() {
@@ -100,8 +100,8 @@ class PlayerFragment : Fragment() {
     private fun enableButtons(state: MusicState) {
         val songPlays = state == MusicState.PLAY
         with(binding) {
-            btnPlayMusic.isEnabled = !songPlays
-            btnStopMusic.isEnabled = songPlays
+            playPause.isEnabled = !songPlays
+           // btnStopMusic.isEnabled = songPlays
         }
     }
 
