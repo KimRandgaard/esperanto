@@ -59,8 +59,8 @@ class PlayerFragment : Fragment() {
         binding.btnPlayMusic.setOnClickListener {
             sendCommandToBoundService(MusicState.PLAY)
         }
-        binding.btnStopMusic.setOnClickListener {
-            sendCommandToBoundService(MusicState.STOP)
+        binding.btnPauseMusic.setOnClickListener {
+            sendCommandToBoundService(MusicState.PAUSE)
         }
     }
 
@@ -102,7 +102,7 @@ class PlayerFragment : Fragment() {
         val songPlays = state == MusicState.PLAY
         with(binding) {
             btnPlayMusic.isEnabled = !songPlays
-            btnStopMusic.isEnabled = songPlays
+            btnPauseMusic.isEnabled = songPlays
         }
     }
 

@@ -39,7 +39,7 @@
 			app:layout_constraintVertical_bias="0.491" />
 
 		<Button
-			android:id="@+id/btnStopMusic"
+			android:id="@+id/btnPauseMusic"
 			android:layout_width="@dimen/optionsDim"
 			android:layout_height="@dimen/optionsDim"
 			android:layout_marginStart="12dp"
