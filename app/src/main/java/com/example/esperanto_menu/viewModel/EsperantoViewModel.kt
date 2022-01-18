@@ -17,6 +17,7 @@ class EsperantoViewModel: ViewModel() {
 
     private val _text = MutableLiveData<String>()
     val text: LiveData<String> = _text
+    var isMusicServiceBound: Boolean = false
 
     private fun loadJson(context: Context): String {
         var input: InputStream? = null

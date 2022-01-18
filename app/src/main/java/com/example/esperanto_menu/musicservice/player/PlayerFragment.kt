@@ -12,10 +12,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.navArgs
 import com.example.esperanto_menu.databinding.FragmentPlayerBinding
 import com.example.esperanto_menu.musicservice.model.MusicState
 import com.example.esperanto_menu.musicservice.services.MusicService
 import com.example.esperanto_menu.musicservice.viewmodel.PlayerViewModel
+import com.example.esperanto_menu.viewModel.EsperantoViewModel
 
 class PlayerFragment : Fragment() {
     private var _binding: FragmentPlayerBinding? = null
@@ -23,9 +25,11 @@ class PlayerFragment : Fragment() {
     private val binding: FragmentPlayerBinding by lazy {
         FragmentPlayerBinding.inflate(layoutInflater)
     }
-    private val viewModel: PlayerViewModel by lazy {
-        ViewModelProvider(this)[PlayerViewModel::class.java]
+    private val viewModel: EsperantoViewModel by lazy {
+        ViewModelProvider(this)[EsperantoViewModel::class.java]
     }
+
+    private val navigationArgs: PlayerFragmentArgs by navArgs()
 
     private var musicService: MusicService? = null
 
@@ -56,6 +60,9 @@ class PlayerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val episode = viewModel.getEpisode(navigationArgs.episodeName,requireContext())
+
+        musicService!!.setSong(episode.mp3fajlo)
         binding.playPause.setOnClickListener {
             sendCommandToBoundService(MusicState.PLAY)
         }

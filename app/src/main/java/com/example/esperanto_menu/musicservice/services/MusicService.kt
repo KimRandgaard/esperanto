@@ -7,10 +7,12 @@ import android.os.Binder
 import android.os.IBinder
 import com.example.esperanto_menu.R
 import com.example.esperanto_menu.musicservice.model.MusicState
+import java.net.URI
 
 
 class MusicService : Service() {
 
+    private lateinit var song : String
     private val binder by lazy { MusicBinder() }
 
     override fun onBind(intent: Intent?): IBinder = binder
@@ -36,11 +38,16 @@ class MusicService : Service() {
     }
 
     private fun initializeMediaPlayer() {
-        if (songs.isNotEmpty()) {
-            musicMediaPlayer = MediaPlayer.create(this, songs.first()).apply {
-                isLooping = true
-            }
-        }
+       // if (songs.isNotEmpty()) {
+            musicMediaPlayer = MediaPlayer()
+        musicMediaPlayer!!.setDataSource(song)
+        musicMediaPlayer!!.prepare()
+
+     //   }
+    }
+
+    fun setSong(songURL : String) {
+        song = songURL
     }
 
     private fun startMusic() {
