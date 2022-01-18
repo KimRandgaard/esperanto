@@ -48,12 +48,9 @@ class MusicService : Service() {
         musicMediaPlayer?.start()
     }
 
-
+    //Sørger for at man kan kun trykke på start knappen én gange for af afspille - ungå loop
     private fun stopMusic() {
-        musicMediaPlayer?.run {
-            stop()
-            release()
-        }
+        musicMediaPlayer?.pause()
     }
 
 }
