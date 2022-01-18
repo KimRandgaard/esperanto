@@ -58,6 +58,11 @@ class SpeceficEpisodeFragment: Fragment() {
 
         }
 
+        binding.playEpisode.setOnClickListener{
+            val action = SpeceficEpisodeFragmentDirections.actionNavigationSpeceficEpisodeToPlayer(episode.nomo)
+            findNavController().navigate(action)
+        }
+
     }
 
 
