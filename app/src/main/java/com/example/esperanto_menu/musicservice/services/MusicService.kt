@@ -2,9 +2,11 @@ package com.example.esperanto_menu.musicservice.services
 
 import android.app.Service
 import android.content.Intent
+import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.os.Binder
 import android.os.IBinder
+import android.util.Log
 import com.example.esperanto_menu.R
 import com.example.esperanto_menu.musicservice.model.MusicState
 import java.net.URI
@@ -24,9 +26,7 @@ class MusicService : Service() {
     private var musicState = MusicState.STOP
     private var musicMediaPlayer: MediaPlayer? = null
 
-    private val songs: List<Int> = listOf(
-        R.raw.spaceoddity
-    )
+    private val songs: MutableList<String> = mutableListOf()
 
 
     fun runAction(state: MusicState) {
@@ -38,20 +38,31 @@ class MusicService : Service() {
     }
 
     private fun initializeMediaPlayer() {
-       // if (songs.isNotEmpty()) {
-            musicMediaPlayer = MediaPlayer()
-        musicMediaPlayer!!.setDataSource(song)
-        musicMediaPlayer!!.prepare()
+        //if (songs.isNotEmpty()) {
+       // musicMediaPlayer = MediaPlayer()
+        //musicMediaPlayer?.setDataSource("http://melburno.org.au/3ZZZradio/mp3/2021-11-22.3ZZZ.radio.mp3")
+        //musicMediaPlayer?.prepare()
+        musicMediaPlayer = MediaPlayer().apply {
+            setAudioAttributes(
+                AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                    .build()
+            )
+            setDataSource("http://melburno.org.au/3ZZZradio/mp3/2021-11-22.3ZZZ.radio.mp3")
 
-     //   }
+                    }
+       //}
     }
 
     fun setSong(songURL : String) {
-        song = songURL
+        songs.add(songURL)
+        Log.d("Sang",songURL)
     }
 
     private fun startMusic() {
         initializeMediaPlayer()
+        musicMediaPlayer?.prepare()
         musicMediaPlayer?.start()
     }
 
