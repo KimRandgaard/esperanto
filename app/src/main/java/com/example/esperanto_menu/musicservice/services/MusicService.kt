@@ -5,6 +5,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Binder
 import android.os.IBinder
+import android.util.Log
 import com.example.esperanto_menu.R
 import com.example.esperanto_menu.musicservice.model.MusicState
 
@@ -19,7 +20,7 @@ class MusicService : Service() {
         fun getService(): MusicService = this@MusicService
     }
 
-    private var musicState = MusicState.STOP
+    private var musicState = MusicState.PAUSE
     private var musicMediaPlayer: MediaPlayer? = null
 
     private val songs: List<Int> = listOf(
@@ -32,6 +33,7 @@ class MusicService : Service() {
         when (state) {
             MusicState.PLAY -> startMusic()
             MusicState.STOP -> stopMusic()
+            MusicState.PAUSE -> pauseMusic()
         }
     }
 
@@ -44,18 +46,20 @@ class MusicService : Service() {
     }
 
     private fun startMusic() {
-        initializeMediaPlayer()
+        if(musicMediaPlayer == null)  {
+            initializeMediaPlayer()
+        }
+        Log.d("MUSICPLAYER", "Start Position: " + musicMediaPlayer?.currentPosition)
         musicMediaPlayer?.start()
     }
 
-
+    //Sørger for at man kan kun trykke på start knappen én gange for af afspille - ungå loop
     private fun stopMusic() {
-        musicMediaPlayer?.run {
-            stop()
-            release()
-        }
+        musicMediaPlayer?.stop()
     }
-
-
+    private fun pauseMusic(){
+        musicMediaPlayer?.pause()
+        Log.d("MUSICPLAYER", "Pause Position: " + musicMediaPlayer?.currentPosition)
+    }
 
 }

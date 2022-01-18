@@ -52,16 +52,16 @@ class PlayerFragment : Fragment() {
         return binding.root
 
 
-}
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.playPause.setOnClickListener {
             sendCommandToBoundService(MusicState.PLAY)
         }
-//        binding.btnStopMusic.setOnClickListener {
-//            sendCommandToBoundService(MusicState.STOP)
-//        }
+        binding.playPause.setOnClickListener {
+            sendCommandToBoundService(MusicState.PAUSE)
+        }
     }
 
     override fun onStart() {
@@ -97,12 +97,12 @@ class PlayerFragment : Fragment() {
         }
     }
 
+    //enabler så man kan trykke på knapperne én af gangen
     private fun enableButtons(state: MusicState) {
         val songPlays = state == MusicState.PLAY
         with(binding) {
             playPause.isEnabled = !songPlays
-           // btnStopMusic.isEnabled = songPlays
+            playPause.isEnabled = songPlays
         }
     }
-
 }

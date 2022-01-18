@@ -30,7 +30,7 @@
         <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.43568840579710144" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2828125" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2828125" />
-        <entry key="app/src/main/res/layout/fragment_player.xml" value="0.27017543859649124" />
+        <entry key="app/src/main/res/layout/fragment_player.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.2828125" />
         <entry key="app/src/main/res/layout/recycler_view_item.xml" value="0.484375" />
         <entry key="app/src/main/res/layout/specefic_channel.xml" value="0.5" />
