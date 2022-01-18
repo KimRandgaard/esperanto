@@ -11,15 +11,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.esperanto_menu.databinding.FragmentPlayerBinding
 import com.example.esperanto_menu.musicservice.model.MusicState
 import com.example.esperanto_menu.musicservice.services.MusicService
 import com.example.esperanto_menu.musicservice.viewmodel.PlayerViewModel
+import com.example.esperanto_menu.ui.episodes.SpeceficEpisodeFragmentArgs
+import com.example.esperanto_menu.ui.episodes.SpeceficEpisodeFragmentDirections
+import com.example.esperanto_menu.viewModel.EsperantoViewModel
 
 class PlayerFragment : Fragment() {
     private var _binding: FragmentPlayerBinding? = null
-
+    private val viewmodel: EsperantoViewModel by viewModels()
+    private val navigationArgs: SpeceficEpisodeFragmentArgs by navArgs()
     private val binding: FragmentPlayerBinding by lazy {
         FragmentPlayerBinding.inflate(layoutInflater)
     }
@@ -55,6 +62,7 @@ class PlayerFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//        val episode = viewmodel.getEpisode(navigationArgs.episodeName,requireContext())
 
         binding.playPause.setOnClickListener {
             sendCommandToBoundService(MusicState.PLAY)
@@ -62,6 +70,13 @@ class PlayerFragment : Fragment() {
         binding.playPause.setOnClickListener {
             sendCommandToBoundService(MusicState.PAUSE)
         }
+//
+//        val action =
+//            PlayerFragmentDirections.actionPlayerToNavigationSpeceficEpisode()
+//
+//        binding.backButton.setOnClickListener {
+//            findNavController().navigate(action)
+//        }
     }
 
     override fun onStart() {

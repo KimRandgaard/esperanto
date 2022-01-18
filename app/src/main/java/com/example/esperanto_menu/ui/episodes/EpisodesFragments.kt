@@ -38,7 +38,6 @@ class EpisodesFragments : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val episodeList = viewmodel.getEpisodesByChannel(navigationArgs.channelName,requireContext())
 
 
@@ -57,7 +56,11 @@ class EpisodesFragments : Fragment() {
         }
 
 
+//        binding.playChannelButton.setOnClickListener{
+//            val action = SpeceficEpisodeFragmentDirections.actionNavigationSpeceficEpisodeToPlayer()
+//            findNavController().navigate(action)
+        }
+
         }
 
 
-    }

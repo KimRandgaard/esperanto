@@ -43,7 +43,7 @@ class SpeceficEpisodeFragment: Fragment() {
 
         binding.apply {
 
-            channelNameOnEpisode.text = episode.nomo
+            channelNameOnEpisode.text = episode.nomo.capitalize()
             episodeNameEpisode.text = episode.plennomo
             episodeDescriptionEpisode.text = episode.teksto
            // episodeLenghtEpisode.text = getDuration(episode.mp3fajlo)
