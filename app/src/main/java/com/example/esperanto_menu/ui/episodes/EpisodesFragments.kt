@@ -40,7 +40,7 @@ class EpisodesFragments : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val episodeList = viewmodel.getEpisodesByChannel(navigationArgs.channelName,requireContext())
 
-
+//        val episode = viewmodel.getEpisode(navigationArgs.channelName,requireContext())
         binding.recyclerViewEpisodes.layoutManager = LinearLayoutManager(requireContext())
 
         val adapter = Episode_Adapter(requireContext(), episodeList)
@@ -55,7 +55,10 @@ class EpisodesFragments : Fragment() {
 //        val action = EpisodesFragmentsDirections.actionNavigationEpisodesToPlayer(episode.nomo)
 //
 //        binding.playChannelButton.setOnClickListener{
-//            findNavController().navigate(action)
+//           findNavController().navigate(R.id.action_navigation_episodes_to_player, episode.nomo)
+//        }
+
+
 
         }
 

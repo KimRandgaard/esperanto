@@ -7,6 +7,7 @@ import android.content.ServiceConnection
 import android.os.Bundle
 import android.os.Handler
 import android.os.IBinder
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -62,15 +63,20 @@ class PlayerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 //        val episode = viewmodel.getEpisode(navigationArgs.episodeName,requireContext())
 
-        binding.playPause.setOnClickListener {
-            sendCommandToBoundService(MusicState.PLAY)
-        }
-        binding.playPause.setOnClickListener {
-            sendCommandToBoundService(MusicState.PAUSE)
-        }
+//        binding.playPause.setOnClickListener {
+//            sendCommandToBoundService(MusicState.PLAY)
+//        }
+//        binding.playPause.setOnClickListener {
+//            sendCommandToBoundService(MusicState.PAUSE)
+//        }
 //
         val episode = viewmodel.getEpisode(navigationArgs.episodeName,requireContext())
-
+        binding.playPause.setOnClickListener {
+          sendCommandToBoundService(MusicState.PLAY, episode.mp3fajlo)
+        }
+        //binding.btnStopMusic.setOnClickListener {
+        //    sendCommandToBoundService(MusicState.STOP)
+        //}
         binding.apply {
 
             playerChannelName.text = episode.nomo.capitalize()
@@ -113,8 +119,9 @@ class PlayerFragment : Fragment() {
         }
     }
 
-    private fun sendCommandToBoundService(state: MusicState) {
+    private fun sendCommandToBoundService(state: MusicState, mp3: String) {
         if (viewModel.isMusicServiceBound) {
+            musicService?.setSong(mp3)
             musicService?.runAction(state)
             enableButtons(state)
         }
