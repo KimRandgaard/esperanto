@@ -17,7 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        tools:listitem="@layout/channel_list" />
+        tools:listitem="@layout/channel_list"
+        android:paddingBottom="60dp"/>
 
     <TextView
         android:id="@+id/textView"
