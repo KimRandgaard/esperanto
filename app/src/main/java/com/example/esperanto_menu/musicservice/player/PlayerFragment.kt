@@ -80,12 +80,9 @@ class PlayerFragment : Fragment() {
 
         }
 
-
-        val action =
-            PlayerFragmentDirections.actionPlayerToNavigationSpeceficEpisode(episode.plennomo)
-
         binding.backButton.setOnClickListener {
-            findNavController().navigate(action)
+
+           activity?.onBackPressed()
         }
     }
 
