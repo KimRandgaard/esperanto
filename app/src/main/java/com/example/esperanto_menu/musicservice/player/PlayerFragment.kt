@@ -27,9 +27,7 @@ class PlayerFragment : Fragment() {
     private var _binding: FragmentPlayerBinding? = null
     private val viewmodel: EsperantoViewModel by viewModels()
     private val navigationArgs: SpeceficEpisodeFragmentArgs by navArgs()
-    private val binding: FragmentPlayerBinding by lazy {
-        FragmentPlayerBinding.inflate(layoutInflater)
-    }
+    private val binding get() = _binding!!
     private val viewModel: PlayerViewModel by lazy {
         ViewModelProvider(this)[PlayerViewModel::class.java]
     }
@@ -71,6 +69,16 @@ class PlayerFragment : Fragment() {
             sendCommandToBoundService(MusicState.PAUSE)
         }
 //
+        val episode = viewmodel.getEpisode(navigationArgs.episodeName,requireContext())
+
+        binding.apply {
+
+            playerChannelName.text = episode.nomo.capitalize()
+            playerEpisodeName.text = episode.plennomo.capitalize() + " " + episode.dato
+
+        }
+
+
 //        val action =
 //            PlayerFragmentDirections.actionPlayerToNavigationSpeceficEpisode()
 //

@@ -38,6 +38,14 @@ class EsperantoViewModel: ViewModel() {
         return jsonString;
     }
 
+fun isMusicServiceBound() {
+    var isMusicServiceBound: Boolean = false
+
+    return isMusicServiceBound()
+
+}
+
+
 
     fun getchannellist(context: Context): List<Channel> {
         val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()

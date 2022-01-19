@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,8 +24,8 @@ class ChannelFragment : Fragment() {
     private var _binding: FragmentChannelBinding? = null
     private val binding get() = _binding!!
     private val viewmodel: EsperantoViewModel by viewModels()
-    lateinit var recycler : RecyclerView
-    private lateinit var myAdapater : Channel_Adapter
+    lateinit var recycler: RecyclerView
+    private lateinit var myAdapater: Channel_Adapter
     private lateinit var list: ArrayList<Channel>
 
     override fun onCreateView(
@@ -33,7 +34,7 @@ class ChannelFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentChannelBinding.inflate(inflater,container,false)
+        _binding = FragmentChannelBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -41,17 +42,23 @@ class ChannelFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+//        val item = values[position]
+//        holder.bind(item)
+//        holder.itemView.setOnClickListener {
+//            val action =
+//                ChannelFragmentDirections.actionNavigationChannelsToNavigationEpisodes(channelName = item)
+//            holder.view.findNavController().navigate(action)
 
 
-        val channelList = viewmodel.getchannellist(requireContext())
-    //    Log.d("Jens", channel.toString())
+            val channelList = viewmodel.getchannellist(requireContext())
+            //    Log.d("Jens", channel.toString())
 
-        binding.recyclerViewChannels.layoutManager = LinearLayoutManager(requireContext())
-       val channels =  channelList.groupBy {
-            it.nomo
-        }.map {
-            it.key
-       }
+            binding.recyclerViewChannels.layoutManager = LinearLayoutManager(requireContext())
+            val channels = channelList.groupBy {
+                it.nomo
+            }.map {
+                it.key
+            }
 
 /*
 
@@ -75,22 +82,20 @@ class ChannelFragment : Fragment() {
 
 
 
-        Log.d("dublicate", channels.toString())
+            Log.d("dublicate", channels.toString())
 
-        val adapter = ToString_Adapter_Channels(requireContext(),channels)
-        binding.recyclerViewChannels.adapter = adapter
+            val adapter = ToString_Adapter_Channels(requireContext(), channels)
+            binding.recyclerViewChannels.adapter = adapter
 
-        channels.forEach{
-            Log.d("Jens", it.toString())
+            channels.forEach {
+                Log.d("Jens", it.toString())
+            }
+
+
         }
 
-
-
-
+        override fun onDestroyView() {
+            super.onDestroyView()
+            _binding = null
+        }
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-}

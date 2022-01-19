@@ -44,7 +44,7 @@ class SpeceficEpisodeFragment: Fragment() {
         binding.apply {
 
             channelNameOnEpisode.text = episode.nomo.capitalize()
-            episodeNameEpisode.text = episode.plennomo
+            episodeNameEpisode.text = episode.plennomo + episode.dato
             episodeDescriptionEpisode.text = episode.teksto
            // episodeLenghtEpisode.text = getDuration(episode.mp3fajlo)
             // might need another method to get leanght of episode!
@@ -59,7 +59,7 @@ class SpeceficEpisodeFragment: Fragment() {
         }
 
         binding.playEpisode.setOnClickListener{
-            val action = SpeceficEpisodeFragmentDirections.actionNavigationSpeceficEpisodeToPlayer(episode.nomo)
+            val action = SpeceficEpisodeFragmentDirections.actionNavigationSpeceficEpisodeToPlayer(episode.plennomo)
             findNavController().navigate(action)
         }
 
