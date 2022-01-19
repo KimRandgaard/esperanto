@@ -54,7 +54,6 @@ class ChannelFragment : Fragment() {
 
         val adapter = ToString_Adapter_Channels(requireContext(), channels)
         binding.recyclerViewChannels.adapter = adapter
-
         channels.forEach {
             Log.d("Jens", it.toString())
         }
@@ -65,4 +64,4 @@ class ChannelFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-    }
+}

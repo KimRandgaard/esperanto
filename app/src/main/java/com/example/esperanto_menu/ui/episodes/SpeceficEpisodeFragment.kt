@@ -49,6 +49,9 @@ class SpeceficEpisodeFragment: Fragment() {
             // episodeLenghtEpisode.text = getDuration(episode.mp3fajlo)
             // might need another method to get leanght of episode!
 
+            speceficEpisodeFavorit.setOnClickListener{
+                speceficEpisodeFavorit.setImageResource(R.drawable.favorite_fill2)
+            }
         }
 
 

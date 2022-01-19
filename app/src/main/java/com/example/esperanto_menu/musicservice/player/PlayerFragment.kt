@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SeekBar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
@@ -23,6 +24,7 @@ import com.example.esperanto_menu.musicservice.viewmodel.PlayerViewModel
 import com.example.esperanto_menu.ui.episodes.SpeceficEpisodeFragmentArgs
 import com.example.esperanto_menu.ui.episodes.SpeceficEpisodeFragmentDirections
 import com.example.esperanto_menu.viewModel.EsperantoViewModel
+import java.lang.Exception
 
 class PlayerFragment : Fragment() {
     private var _binding: FragmentPlayerBinding? = null
@@ -67,10 +69,7 @@ class PlayerFragment : Fragment() {
         val episode = viewmodel.getEpisode(navigationArgs.episodeName, navigationArgs.episodeDate, requireContext())
 
         binding.Play.setOnClickListener {
-          sendCommandToBoundService(MusicState.PLAY, episode.mp3fajlo)
-        }
-        binding.Pause.setOnClickListener {
-            sendCommandToBoundService(MusicState.PAUSE, episode.mp3fajlo)
+          sendCommandToBoundService(episode.mp3fajlo)
         }
 
         binding.apply {
@@ -78,15 +77,44 @@ class PlayerFragment : Fragment() {
             playerChannelName.text = episode.nomo.capitalize()
             playerEpisodeName.text = episode.plennomo.capitalize() + " " + episode.dato
 
+            seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+                override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                    if (fromUser) musicService?.seekTo(progress)
+                }
+
+                override fun onStartTrackingTouch(p0: SeekBar?) {
+                }
+
+                override fun onStopTrackingTouch(p0: SeekBar?) {
+                }
+
+            })
+
         }
 
-
-        val action =
-            PlayerFragmentDirections.actionPlayerToNavigationSpeceficEpisode(episode.plennomo)
 
         binding.backButton.setOnClickListener {
-            findNavController().navigate(action)
+
+           activity?.onBackPressed()
         }
+
+        initSeekBar(binding.seekBar)
+    }
+
+    private fun initSeekBar(seekbar: SeekBar){
+        seekbar.max = musicService!!.getDuration()
+
+        val handler = Handler()
+        handler.postDelayed(object : Runnable {
+            override fun run(){
+                try{
+                    seekbar.progress = musicService!!.getCurrentPos()
+                    handler.postDelayed(this, 1000)
+                } catch (e: Exception){
+                    seekbar.progress = 0
+                }
+            }
+        },0)
     }
 
     override fun onStart() {
@@ -115,21 +143,18 @@ class PlayerFragment : Fragment() {
         }
     }
 
-    private fun sendCommandToBoundService(state: MusicState, mp3: String) {
+    private fun sendCommandToBoundService(mp3: String) {
         if (viewModel.isMusicServiceBound) {
             musicService?.setSong(mp3)
-            enableButtons(state)
-            musicService?.runAction(state, mp3)
-        }
-    }
+            var state = musicService?.getMusicState()
+            var action = when(state){
+                MusicState.PLAY -> MusicState.PAUSE
+                else -> MusicState.PLAY
+            }
+            Log.d("STATE:", state.toString())
+            Log.d("ACTION:", action.toString())
+            musicService?.runAction(action, mp3)
 
-
-    //enabler så man kan trykke på knapperne én af gangen
-    private fun enableButtons(state: MusicState) {
-        val songPlays = state == MusicState.PLAY
-        with(binding) {
-            Play.isEnabled = !songPlays
-            Pause.isEnabled = songPlays
         }
     }
 }
