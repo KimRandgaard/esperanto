@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/heartonfavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/favorite_fill2"
+        android:padding="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/channelpiconfavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/favorite_small"
+        app:layout_constraintLeft_toRightOf="@+id/heartonfavorites"
+        android:layout_marginLeft="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/channelexample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/channel_example"
+        app:layout_constraintLeft_toLeftOf="@id/channelpiconfavorites"
+        app:layout_constraintRight_toRightOf="@id/channelpiconfavorites"
+        app:layout_constraintTop_toTopOf="@id/channelpiconfavorites"
+        app:layout_constraintBottom_toBottomOf="@id/channelpiconfavorites"
+        />
+
+    <TextView
+        android:id="@+id/channelnameonfavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Channel Name"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintLeft_toRightOf="@id/channelpiconfavorites"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="8dp"
+
+        />
+
+    <ImageView
+        android:id="@+id/playfavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/playfavorite"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/viva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:text="Viva!"
+        app:layout_constraintRight_toLeftOf="@id/playfavorite"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginRight="4dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

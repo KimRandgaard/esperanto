@@ -59,7 +59,9 @@ class EpisodesFragments : Fragment() {
 //        }
 
 
-
+        binding.playChannelButton.setOnClickListener{
+            findNavController().navigate(R.id.action_navigation_episodes_to_player)
+        }
         }
 
     }

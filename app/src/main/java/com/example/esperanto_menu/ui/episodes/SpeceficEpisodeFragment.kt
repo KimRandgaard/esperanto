@@ -20,50 +20,56 @@ class SpeceficEpisodeFragment: Fragment() {
     private var _binding: SpeceficEpisodeBinding? = null
     private val binding get() = _binding!!
     private val viewmodel: EsperantoViewModel by viewModels()
-    lateinit var recyclerview : RecyclerView
+    lateinit var recyclerview: RecyclerView
     private lateinit var list: ArrayList<Channel>
     private val navigationArgs: SpeceficEpisodeFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
-        container:ViewGroup?,
+        container: ViewGroup?,
         saveInstaceState: Bundle?
     ): View? {
 
-        _binding = SpeceficEpisodeBinding.inflate(inflater,container,false)
+        _binding = SpeceficEpisodeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val episode = viewmodel.getEpisode(navigationArgs.episodeName,requireContext())
+        val episode = viewmodel.getEpisode(navigationArgs.episodeName, requireContext())
 
         binding.episodeNameEpisode.text = navigationArgs.episodeName.capitalize()
 
         binding.apply {
 
             channelNameOnEpisode.text = episode.nomo.capitalize()
-            episodeNameEpisode.text = episode.plennomo + episode.dato
+            episodeNameEpisode.text = episode.plennomo + " " + episode.dato
             episodeDescriptionEpisode.text = episode.teksto
-           // episodeLenghtEpisode.text = getDuration(episode.mp3fajlo)
+            // episodeLenghtEpisode.text = getDuration(episode.mp3fajlo)
             // might need another method to get leanght of episode!
 
-                    }
+        }
 
-        val action = SpeceficEpisodeFragmentDirections.actionNavigationSpeceficEpisodeToNavigationEpisodes(episode.nomo)
 
-        binding.backButtonEpisode.setOnClickListener{
+        binding.backButtonEpisode.setOnClickListener {
+            val action =
+                SpeceficEpisodeFragmentDirections.actionNavigationSpeceficEpisodeToNavigationEpisodes(
+                    episode.nomo
+                )
             findNavController().navigate(action)
 
         }
-
-        binding.playEpisode.setOnClickListener{
-            val action = SpeceficEpisodeFragmentDirections.actionNavigationSpeceficEpisodeToPlayer(episode.plennomo)
+        binding.playEpisode.setOnClickListener {
+            val action =
+                SpeceficEpisodeFragmentDirections.actionNavigationSpeceficEpisodeToPlayer(
+                        episode.plennomo
+                )
             findNavController().navigate(action)
         }
+
+
 
     }
-
 
 }
