@@ -69,4 +69,4 @@ class ChannelFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-    }
+}
