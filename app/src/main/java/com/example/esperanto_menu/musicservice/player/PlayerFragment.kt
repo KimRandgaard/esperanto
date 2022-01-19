@@ -79,12 +79,12 @@ class PlayerFragment : Fragment() {
         }
 
 
-//        val action =
-//            PlayerFragmentDirections.actionPlayerToNavigationSpeceficEpisode()
-//
-//        binding.backButton.setOnClickListener {
-//            findNavController().navigate(action)
-//        }
+        val action =
+            PlayerFragmentDirections.actionPlayerToNavigationSpeceficEpisode(episode.plennomo)
+
+        binding.backButton.setOnClickListener {
+            findNavController().navigate(action)
+        }
     }
 
     override fun onStart() {
