@@ -48,19 +48,20 @@ class EpisodesFragments : Fragment() {
 
         binding.speceficChannelName.text = navigationArgs.channelName.capitalize()
 
-//        binding.VundetTilStart.setOnClickListener {
-//            findNavController().navigate(R.id.action_gameWon_to_startGameFragment)
-//    }
         binding.backButton.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_episodes_to_navigation_channels)
         }
 
-
+//        val action = EpisodesFragmentsDirections.actionNavigationEpisodesToPlayer(episode.nomo)
+//
 //        binding.playChannelButton.setOnClickListener{
-//            val action = SpeceficEpisodeFragmentDirections.actionNavigationSpeceficEpisodeToPlayer()
 //            findNavController().navigate(action)
-        }
 
         }
+
+    }
+
+
+
 
 

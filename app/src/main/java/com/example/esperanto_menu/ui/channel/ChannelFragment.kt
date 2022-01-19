@@ -42,60 +42,31 @@ class ChannelFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-//        val item = values[position]
-//        holder.bind(item)
-//        holder.itemView.setOnClickListener {
-//            val action =
-//                ChannelFragmentDirections.actionNavigationChannelsToNavigationEpisodes(channelName = item)
-//            holder.view.findNavController().navigate(action)
+        val channelList = viewmodel.getchannellist(requireContext())
+        //    Log.d("Jens", channel.toString())
 
-
-            val channelList = viewmodel.getchannellist(requireContext())
-            //    Log.d("Jens", channel.toString())
-
-            binding.recyclerViewChannels.layoutManager = LinearLayoutManager(requireContext())
-            val channels = channelList.groupBy {
-                it.nomo
-            }.map {
-                it.key
-            }
-
-/*
-
-        recycler = view.findViewById(R.id.recyclerViewChannels)
-        recycler.layoutManager = LinearLayoutManager(context)
-        recycler.setHasFixedSize(true)
-
-        list = arrayListOf()
-
-        myAdapater = Channel_Adapter(list, requireContext(), list )
-
-        recycler.adapter = myAdapater
-
-        myAdapater.onItemClick = {
-            // do action with item
-
-            Toast.makeText(context, "Test", Toast.LENGTH_SHORT).show()
-
-        }
-*/
-
-
-
-            Log.d("dublicate", channels.toString())
-
-            val adapter = ToString_Adapter_Channels(requireContext(), channels)
-            binding.recyclerViewChannels.adapter = adapter
-
-            channels.forEach {
-                Log.d("Jens", it.toString())
-            }
-
-
+        binding.recyclerViewChannels.layoutManager = LinearLayoutManager(requireContext())
+        val channels = channelList.groupBy {
+            it.nomo
+        }.map {
+            it.key
         }
 
-        override fun onDestroyView() {
-            super.onDestroyView()
-            _binding = null
+
+        Log.d("dublicate", channels.toString())
+
+        val adapter = ToString_Adapter_Channels(requireContext(), channels)
+        binding.recyclerViewChannels.adapter = adapter
+
+        channels.forEach {
+            Log.d("Jens", it.toString())
         }
+
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
     }
