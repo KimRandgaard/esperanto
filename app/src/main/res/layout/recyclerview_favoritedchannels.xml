@@ -22,6 +22,9 @@
         app:layout_constraintLeft_toRightOf="@+id/heartonfavorites"
         android:layout_marginLeft="4dp"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
     <ImageView
