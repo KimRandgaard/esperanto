@@ -74,9 +74,10 @@ class PlayerFragment : Fragment() {
         binding.playPause.setOnClickListener {
           sendCommandToBoundService(MusicState.PLAY, episode.mp3fajlo)
         }
-        //binding.btnStopMusic.setOnClickListener {
-        //    sendCommandToBoundService(MusicState.STOP)
-        //}
+        binding.playPause.setOnClickListener {
+            sendCommandToBoundService(MusicState.PAUSE, episode.mp3fajlo)
+        }
+
         binding.apply {
 
             playerChannelName.text = episode.nomo.capitalize()
