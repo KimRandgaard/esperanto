@@ -11,7 +11,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SeekBar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
@@ -24,7 +23,6 @@ import com.example.esperanto_menu.musicservice.viewmodel.PlayerViewModel
 import com.example.esperanto_menu.ui.episodes.SpeceficEpisodeFragmentArgs
 import com.example.esperanto_menu.ui.episodes.SpeceficEpisodeFragmentDirections
 import com.example.esperanto_menu.viewModel.EsperantoViewModel
-import java.lang.Exception
 
 class PlayerFragment : Fragment() {
     private var _binding: FragmentPlayerBinding? = null
@@ -77,44 +75,14 @@ class PlayerFragment : Fragment() {
             playerChannelName.text = episode.nomo.capitalize()
             playerEpisodeName.text = episode.plennomo.capitalize() + " " + episode.dato
 
-            seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
-                override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                    if (fromUser) musicService?.seekTo(progress)
-                }
-
-                override fun onStartTrackingTouch(p0: SeekBar?) {
-                }
-
-                override fun onStopTrackingTouch(p0: SeekBar?) {
-                }
-
-            })
-
         }
+
+
 
 
         binding.backButton.setOnClickListener {
-
-           activity?.onBackPressed()
+            activity?.onBackPressed()
         }
-
-        initSeekBar(binding.seekBar)
-    }
-
-    private fun initSeekBar(seekbar: SeekBar){
-        seekbar.max = musicService!!.getDuration()
-
-        val handler = Handler()
-        handler.postDelayed(object : Runnable {
-            override fun run(){
-                try{
-                    seekbar.progress = musicService!!.getCurrentPos()
-                    handler.postDelayed(this, 1000)
-                } catch (e: Exception){
-                    seekbar.progress = 0
-                }
-            }
-        },0)
     }
 
     override fun onStart() {

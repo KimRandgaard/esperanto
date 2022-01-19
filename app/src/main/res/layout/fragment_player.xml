@@ -157,6 +157,7 @@
 		android:focusable="true"
 		/>
 
+
 	<TextView
 		android:id="@+id/forwardText"
 		android:layout_width="wrap_content"

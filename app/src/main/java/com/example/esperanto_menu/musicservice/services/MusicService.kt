@@ -28,13 +28,6 @@ class MusicService : Service() {
 
     private val songs: MutableList<String> = mutableListOf()
 
-    fun seekTo(progress: Int){
-        musicMediaPlayer?.seekTo(progress)
-    }
-
-    fun getDuration(): Int{
-        return musicMediaPlayer!!.duration
-    }
 
     fun getCurrentPos(): Int{
         return musicMediaPlayer!!.currentPosition
@@ -53,7 +46,7 @@ class MusicService : Service() {
         }
     }
 
-    private fun initializeMediaPlayer(songURL : String) {
+    private fun initializeMediaPlayer(songURL: String) {
         //if (songs.isNotEmpty()) {
         // musicMediaPlayer = MediaPlayer()
         //musicMediaPlayer?.setDataSource("http://melburno.org.au/3ZZZradio/mp3/2021-11-22.3ZZZ.radio.mp3")
@@ -73,7 +66,6 @@ class MusicService : Service() {
         Log.d("Sang",songURL)
     }
 
-
     fun setSong(songURL : String) {
         songs.add(songURL)
         Log.d("Sang",songURL)
@@ -82,15 +74,12 @@ class MusicService : Service() {
     private fun startMusic(songURL : String) {
         if (musicMediaPlayer == null){
             initializeMediaPlayer(songURL)
-            Log.d("MUSICPLAYER", "Staten: " + musicMediaPlayer?.toString())
-
-            Log.d("MUSICPLAYER", "Start Position: " + musicMediaPlayer?.currentPosition)
             musicMediaPlayer?.prepare()
         }
         musicMediaPlayer?.start()
     }
 
-    //Sørger for at man kan kun trykke på start knappen én gange for af afspille - ungå loop
+
     private fun stopMusic() {
         musicMediaPlayer?.run {
             stop()
