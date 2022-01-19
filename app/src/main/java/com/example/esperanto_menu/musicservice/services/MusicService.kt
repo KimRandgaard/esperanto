@@ -43,18 +43,20 @@ class MusicService : Service() {
         // musicMediaPlayer = MediaPlayer()
         //musicMediaPlayer?.setDataSource("http://melburno.org.au/3ZZZradio/mp3/2021-11-22.3ZZZ.radio.mp3")
         //musicMediaPlayer?.prepare()
+
         musicMediaPlayer = MediaPlayer().apply {
-            setAudioAttributes(
-                AudioAttributes.Builder()
-                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                    .setUsage(AudioAttributes.USAGE_MEDIA)
-                    .build()
-            )
-            setDataSource("http://melburno.org.au/3ZZZradio/mp3/2021-11-22.3ZZZ.radio.mp3")
+                setAudioAttributes(
+                   AudioAttributes.Builder()
+                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                        .setUsage(AudioAttributes.USAGE_MEDIA)
+                       .build()
+                )
+                setDataSource("http://melburno.org.au/3ZZZradio/mp3/2021-11-22.3ZZZ.radio.mp3")
 
         }
         //}
     }
+
 
     fun setSong(songURL : String) {
         songs.add(songURL)
@@ -63,11 +65,14 @@ class MusicService : Service() {
 
     private fun startMusic() {
         initializeMediaPlayer()
+        Log.d("MUSICPLAYER", "Staten: " + musicMediaPlayer?.toString())
+
+        Log.d("MUSICPLAYER", "Start Position: " + musicMediaPlayer?.currentPosition)
         musicMediaPlayer?.prepare()
         musicMediaPlayer?.start()
     }
 
-
+    //Sørger for at man kan kun trykke på start knappen én gange for af afspille - ungå loop
     private fun stopMusic() {
         musicMediaPlayer?.run {
             stop()

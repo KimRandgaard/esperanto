@@ -126,7 +126,7 @@
 		app:layout_constraintLeft_toLeftOf="parent"
 		app:layout_constraintTop_toBottomOf="@id/seekBar"
 		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintRight_toLeftOf="@id/playPause"
+		app:layout_constraintRight_toLeftOf="@id/Play"
 		android:clickable="true"
 		android:focusable="true"
 		 />
@@ -139,13 +139,13 @@
 		app:layout_constraintRight_toRightOf="parent"
 		app:layout_constraintTop_toBottomOf="@id/seekBar"
 		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintLeft_toRightOf="@id/playPause"
+		app:layout_constraintLeft_toRightOf="@id/Play"
 		android:clickable="true"
 		android:focusable="true"
 	 />
 
 	<ImageView
-		android:id="@+id/playPause"
+		android:id="@+id/Play"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:src="@drawable/play_pause"
@@ -157,6 +157,20 @@
 		android:focusable="true"
 		/>
 
+	<ImageView
+		android:id="@+id/Pause"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:clickable="true"
+		android:focusable="true"
+		android:src="@drawable/play_pause"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintHorizontal_bias="0.867"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="@id/seekBar"
+		app:layout_constraintVertical_bias="0.122" />
+
 	<TextView
 		android:id="@+id/forwardText"
 		android:layout_width="wrap_content"
@@ -164,7 +178,7 @@
 		android:text="@string/_15_sec"
 		app:layout_constraintTop_toBottomOf="@id/play15sekForward"
 		app:layout_constraintRight_toRightOf="parent"
-		app:layout_constraintLeft_toRightOf="@id/playPause"
+		app:layout_constraintLeft_toRightOf="@id/Play"
 		android:layout_marginTop="8dp"
 		 />
 
@@ -174,7 +188,7 @@
 		android:layout_height="wrap_content"
 		android:text="@string/_15_sec"
 		app:layout_constraintTop_toBottomOf="@id/play15sekBack"
-		app:layout_constraintRight_toLeftOf="@id/playPause"
+		app:layout_constraintRight_toLeftOf="@id/Play"
 		app:layout_constraintLeft_toLeftOf="parent"
 		android:layout_marginTop="8dp"
 		 />

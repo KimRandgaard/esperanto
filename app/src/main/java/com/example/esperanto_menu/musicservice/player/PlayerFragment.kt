@@ -63,20 +63,16 @@ class PlayerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 //        val episode = viewmodel.getEpisode(navigationArgs.episodeName,requireContext())
 
-//        binding.playPause.setOnClickListener {
-//            sendCommandToBoundService(MusicState.PLAY)
-//        }
-//        binding.playPause.setOnClickListener {
-//            sendCommandToBoundService(MusicState.PAUSE)
-//        }
-//
+
         val episode = viewmodel.getEpisode(navigationArgs.episodeName,requireContext())
-        binding.playPause.setOnClickListener {
+
+        binding.Play.setOnClickListener {
           sendCommandToBoundService(MusicState.PLAY, episode.mp3fajlo)
         }
-        //binding.btnStopMusic.setOnClickListener {
-        //    sendCommandToBoundService(MusicState.STOP)
-        //}
+        binding.Pause.setOnClickListener {
+            sendCommandToBoundService(MusicState.PAUSE, episode.mp3fajlo)
+        }
+
         binding.apply {
 
             playerChannelName.text = episode.nomo.capitalize()
@@ -122,8 +118,8 @@ class PlayerFragment : Fragment() {
     private fun sendCommandToBoundService(state: MusicState, mp3: String) {
         if (viewModel.isMusicServiceBound) {
             musicService?.setSong(mp3)
-            musicService?.runAction(state)
             enableButtons(state)
+            musicService?.runAction(state)
         }
     }
 
@@ -131,8 +127,8 @@ class PlayerFragment : Fragment() {
     private fun enableButtons(state: MusicState) {
         val songPlays = state == MusicState.PLAY
         with(binding) {
-            playPause.isEnabled = !songPlays
-            playPause.isEnabled = songPlays
+            Play.isEnabled = !songPlays
+            Pause.isEnabled = songPlays
         }
     }
 }
