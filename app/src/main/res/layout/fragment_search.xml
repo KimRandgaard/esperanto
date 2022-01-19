@@ -16,6 +16,7 @@
         android:layout_marginBottom="16dp"
         android:queryHint="Enter search word"
         android:iconifiedByDefault="false"
+        android:background="@drawable/searchview_background"
 
         />
 

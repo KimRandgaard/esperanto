@@ -31,7 +31,11 @@
         android:id="@+id/navigation_search"
         android:name="com.example.esperanto_menu.ui.search.SearchFragment"
         android:label="@string/title_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_episodes"
+            app:destination="@id/navigation_episodes" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_specefic_Episode"
