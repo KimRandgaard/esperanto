@@ -61,13 +61,14 @@ fun isMusicServiceBound() {
 
     }
 
-    fun getEpisode(episode: String, context: Context): Channel{
+    fun getEpisode(episode: String, date: String,context: Context): Channel{
         val channels = getchannellist(context)
 
         return channels.filter {
 
             it.plennomo == episode
-        }.first()
+
+        }.filter{it.dato == date}.first()
 
     }
 

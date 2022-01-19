@@ -38,7 +38,7 @@ class SpeceficEpisodeFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val episode = viewmodel.getEpisode(navigationArgs.episodeName, requireContext())
+        val episode = viewmodel.getEpisode(navigationArgs.episodeName, navigationArgs.episodeDate, requireContext())
 
         binding.episodeNameEpisode.text = navigationArgs.episodeName.capitalize()
 
@@ -64,7 +64,7 @@ class SpeceficEpisodeFragment: Fragment() {
         binding.playEpisode.setOnClickListener {
             val action =
                 SpeceficEpisodeFragmentDirections.actionNavigationSpeceficEpisodeToPlayer(
-                        episode.plennomo
+                        episode.plennomo, episode.dato
                 )
             findNavController().navigate(action)
         }

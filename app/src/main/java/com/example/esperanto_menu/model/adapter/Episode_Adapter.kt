@@ -34,7 +34,7 @@ private val values: List<Channel>
         holder.bind(item)
 
         holder.itemView.setOnClickListener {
-            val action = EpisodesFragmentsDirections.actionNavigationEpisodesToNavigationSpeceficEpisode(episodeName = item.plennomo)
+            val action = EpisodesFragmentsDirections.actionNavigationEpisodesToNavigationSpeceficEpisode(episodeName = item.plennomo, episodeDate = item.dato)
 
             holder.view.findNavController().navigate(action)
         }
