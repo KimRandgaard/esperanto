@@ -123,6 +123,7 @@ class PlayerFragment : Fragment() {
         }
     }
 
+
     //enabler så man kan trykke på knapperne én af gangen
     private fun enableButtons(state: MusicState) {
         val songPlays = state == MusicState.PLAY
