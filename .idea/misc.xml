@@ -24,6 +24,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.5005208333333333" />
         <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.5005208333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3134057971014493" />
+        <entry key="app/src/main/res/layout/card_view.xml" value="0.3416666666666667" />
         <entry key="app/src/main/res/layout/channel_list.xml" value="0.18981481481481483" />
         <entry key="app/src/main/res/layout/fragment_channel.xml" value="0.23429584599797365" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2828125" />
