@@ -117,7 +117,7 @@ class PlayerFragment : Fragment() {
 
     private fun sendCommandToBoundService(state: MusicState, mp3: String) {
         if (viewModel.isMusicServiceBound) {
-            //musicService?.setSong(mp3)
+            musicService?.setSong(mp3)
             enableButtons(state)
             musicService?.runAction(state, mp3)
         }
