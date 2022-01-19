@@ -10,7 +10,10 @@ import android.util.Log
 import com.example.esperanto_menu.R
 import com.example.esperanto_menu.musicservice.model.MusicState
 import java.net.URI
-
+// Til musicservice er der hentet inspiration fra Ians lektion 3_2 omhandlende MusicService
+// fra 3-ugers perioden. Denne omfatter hele musicService package herunder:
+// MusicState, PlayerFragment, MusicService samt PlayerViewModel
+// : https://learn.inside.dtu.dk/d2l/le/content/80550/viewContent/367175/View
 
 class MusicService : Service() {
 
@@ -52,6 +55,8 @@ class MusicService : Service() {
             MusicState.PAUSE -> pauseMusic()
         }
     }
+
+    // Der er til afspilleren fået inspiration fra android developer https://developer.android.com/guide/topics/media/mediaplayer#kotlin
 
     private fun initializeMediaPlayer(songURL : String) {
         //if (songs.isNotEmpty()) {
