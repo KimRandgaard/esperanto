@@ -157,20 +157,6 @@
 		android:focusable="true"
 		/>
 
-	<ImageView
-		android:id="@+id/Pause"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:clickable="true"
-		android:focusable="true"
-		android:src="@drawable/play_pause"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintHorizontal_bias="0.867"
-		app:layout_constraintLeft_toLeftOf="parent"
-		app:layout_constraintRight_toRightOf="parent"
-		app:layout_constraintTop_toTopOf="@id/seekBar"
-		app:layout_constraintVertical_bias="0.122" />
-
 	<TextView
 		android:id="@+id/forwardText"
 		android:layout_width="wrap_content"

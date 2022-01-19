@@ -23,11 +23,26 @@ class MusicService : Service() {
         fun getService(): MusicService = this@MusicService
     }
 
-    private var musicState = MusicState.STOP
+    private var musicState = MusicState.PAUSE
     private var musicMediaPlayer: MediaPlayer? = null
 
     private val songs: MutableList<String> = mutableListOf()
 
+    fun seekTo(progress: Int){
+        musicMediaPlayer?.seekTo(progress)
+    }
+
+    fun getDuration(): Int{
+        return musicMediaPlayer!!.duration
+    }
+
+    fun getCurrentPos(): Int{
+        return musicMediaPlayer!!.currentPosition
+    }
+
+    fun getMusicState(): MusicState {
+        return musicState
+    }
 
     fun runAction(state: MusicState, songURL : String = "") {
         musicState = state
@@ -43,6 +58,7 @@ class MusicService : Service() {
         // musicMediaPlayer = MediaPlayer()
         //musicMediaPlayer?.setDataSource("http://melburno.org.au/3ZZZradio/mp3/2021-11-22.3ZZZ.radio.mp3")
         //musicMediaPlayer?.prepare()
+
         var url = songURL //"http://melburno.org.au/3ZZZradio/mp3/2021-11-22.3ZZZ.radio.mp3"
         musicMediaPlayer = MediaPlayer().apply {
                 setAudioAttributes(
@@ -54,7 +70,6 @@ class MusicService : Service() {
                 setDataSource(url)
 
         }
-        //}
         Log.d("Sang",songURL)
     }
 
@@ -65,11 +80,13 @@ class MusicService : Service() {
     }
 
     private fun startMusic(songURL : String) {
-        initializeMediaPlayer(songURL)
-        Log.d("MUSICPLAYER", "Staten: " + musicMediaPlayer?.toString())
+        if (musicMediaPlayer == null){
+            initializeMediaPlayer(songURL)
+            Log.d("MUSICPLAYER", "Staten: " + musicMediaPlayer?.toString())
 
-        Log.d("MUSICPLAYER", "Start Position: " + musicMediaPlayer?.currentPosition)
-        musicMediaPlayer?.prepare()
+            Log.d("MUSICPLAYER", "Start Position: " + musicMediaPlayer?.currentPosition)
+            musicMediaPlayer?.prepare()
+        }
         musicMediaPlayer?.start()
     }
 
