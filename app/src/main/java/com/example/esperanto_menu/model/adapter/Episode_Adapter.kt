@@ -35,8 +35,6 @@ private val values: List<Channel>
         }
     }
 
-    override fun getItemCount(): Int = values.size
-
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
 
@@ -51,6 +49,6 @@ private val values: List<Channel>
 
         }
     }
-
+    override fun getItemCount(): Int = values.size
 }
 

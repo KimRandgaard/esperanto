@@ -32,7 +32,7 @@ class Home_Adapter(
         holder.bind(item)
 
         holder.itemView.setOnClickListener {
-            val action = HomeFragmentDirections.actionNavigationHomeToNavigationSpeceficEpisode()
+            val action = HomeFragmentDirections.actionNavigationHomeToNavigationSpeceficEpisode(episodeName = item.plennomo, episodeDate = item.dato)
 
             holder.itemView.findNavController().navigate(action)
         }
@@ -43,10 +43,12 @@ class Home_Adapter(
         private val channelName = ViewHolder.findViewById<TextView>(R.id.channelName_cardView)
         private val episodeName = ViewHolder.findViewById<TextView>(R.id.episodeName_cardView)
        // private val channelPicture = ViewHolder.findViewById<ImageView>(R.id.episodePic_onCard)
+        private val episodeDate = ViewHolder.findViewById<TextView>(R.id.episodeDate_cardVies)
 
         fun bind(item: Channel) {
             channelName.text = item.nomo
-            episodeName.text = item.plennomo + " " + item.dato
+            episodeName.text = item.plennomo
+            episodeDate.text = item.dato
            // channelPicture
 
         }

@@ -43,7 +43,7 @@ class HomeFragment : Fragment() {
         }.map {
             it.key
         }
-        val MyAdapter = Home_Adapter(channelList.subList(0,5))
+        val MyAdapter = Home_Adapter(channelList)
         binding.recyclerView.adapter = MyAdapter
 
         channels.forEach {
