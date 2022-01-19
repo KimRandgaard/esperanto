@@ -64,7 +64,7 @@ class PlayerFragment : Fragment() {
 //        val episode = viewmodel.getEpisode(navigationArgs.episodeName,requireContext())
 
 
-        val episode = viewmodel.getEpisode(navigationArgs.episodeName,requireContext())
+        val episode = viewmodel.getEpisode(navigationArgs.episodeName, navigationArgs.episodeDate, requireContext())
 
         binding.Play.setOnClickListener {
           sendCommandToBoundService(MusicState.PLAY, episode.mp3fajlo)
