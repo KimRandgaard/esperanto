@@ -72,7 +72,7 @@ class PlayerFragment : Fragment() {
         val episode = viewmodel.getEpisode(navigationArgs.episodeName, navigationArgs.episodeDate, requireContext())
 
         binding.Play.setOnClickListener {
-          sendCommandToBoundService(episode.mp3fajlo)
+            sendCommandToBoundService(episode.mp3fajlo)
         }
 
         binding.apply {
@@ -80,44 +80,14 @@ class PlayerFragment : Fragment() {
             playerChannelName.text = episode.nomo.capitalize()
             playerEpisodeName.text = episode.plennomo.capitalize() + " " + episode.dato
 
-            seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
-                override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                    if (fromUser) musicService?.seekTo(progress)
-                }
-
-                override fun onStartTrackingTouch(p0: SeekBar?) {
-                }
-
-                override fun onStopTrackingTouch(p0: SeekBar?) {
-                }
-
-            })
-
         }
+
+
 
 
         binding.backButton.setOnClickListener {
-
-           activity?.onBackPressed()
+            activity?.onBackPressed()
         }
-
-        initSeekBar(binding.seekBar)
-    }
-
-    private fun initSeekBar(seekbar: SeekBar){
-        seekbar.max = musicService!!.getDuration()
-
-        val handler = Handler()
-        handler.postDelayed(object : Runnable {
-            override fun run(){
-                try{
-                    seekbar.progress = musicService!!.getCurrentPos()
-                    handler.postDelayed(this, 1000)
-                } catch (e: Exception){
-                    seekbar.progress = 0
-                }
-            }
-        },0)
     }
 
     override fun onStart() {

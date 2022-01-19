@@ -6,16 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".ui.channel.ChannelFragment">
 
+    <TextView
+        android:id="@+id/channelTitel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kanaloj kaj podkastoj"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:padding="12dp"
+        />
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewChannels"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channelTitel"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/channel_list"
+        android:layout_marginTop="32dp"
+        android:paddingBottom="80dp"
          />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
