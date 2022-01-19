@@ -56,7 +56,7 @@ class MusicService : Service() {
         }
     }
 
-    // Der er til afspilleren fået inspiration fra android developer https://developer.android.com/guide/topics/media/mediaplayer#kotlin
+    //Der er til afspilleren fået inspiration fra android developer https://developer.android.com/guide/topics/media/mediaplayer#kotlin
 
     private fun initializeMediaPlayer(songURL : String) {
         //if (songs.isNotEmpty()) {
