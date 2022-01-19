@@ -54,13 +54,13 @@ class SpeceficEpisodeFragment: Fragment() {
         val action = SpeceficEpisodeFragmentDirections.actionNavigationSpeceficEpisodeToNavigationEpisodes(episode.nomo)
 
         binding.backButtonEpisode.setOnClickListener{
-            findNavController().navigate(action)
+            findNavController().navigate(R.id.action_navigation_specefic_Episode_to_navigation_episodes)
 
         }
 
         binding.playEpisode.setOnClickListener{
-            val action = SpeceficEpisodeFragmentDirections.actionNavigationSpeceficEpisodeToPlayer(episode.plennomo)
-            findNavController().navigate(action)
+           // val action = SpeceficEpisodeFragmentDirections.actionNavigationSpeceficEpisodeToPlayer(episode.plennomo)
+           // findNavController().navigate(action)
         }
 
     }

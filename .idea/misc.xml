@@ -3,39 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/XaDgs/Documents/Gitkraken/esperanto/app/src/main/res/layout/channel_list.xml" value="0.12129629629629629" />
-        <entry key="..\:/Users/XaDgs/Documents/Gitkraken/esperanto/app/src/main/res/layout/fragment_channel.xml" value="0.12129629629629629" />
-        <entry key="..\:/Users/XaDgs/Documents/Gitkraken/esperanto/app/src/main/res/layout/specefic_channel.xml" value="0.31521739130434784" />
-        <entry key="..\:/Users/XaDgs/Documents/Gitkraken/esperanto/app/src/main/res/layout/specefic_episode.xml" value="0.31521739130434784" />
-        <entry key="..\:/Users/XaDgs/Documents/Gitkraken/esperanto/app/src/main/res/layout/specefic_episode_reciclerview.xml" value="0.31521739130434784" />
-        <entry key="..\:/Users/XaDgs/StudioProjects/esperanto/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/XaDgs/StudioProjects/esperanto/app/src/main/res/layout/fragment_channel.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/XaDgs/StudioProjects/esperanto/app/src/main/res/layout/fragment_favorites.xml" value="0.2907608695652174" />
-        <entry key="..\:/Users/XaDgs/StudioProjects/esperanto/app/src/main/res/layout/fragment_home.xml" value="0.2907608695652174" />
-        <entry key="..\:/Users/XaDgs/StudioProjects/esperanto/app/src/main/res/layout/fragment_search.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/XaDgs/StudioProjects/esperanto/app/src/main/res/layout/list_item.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/XaDgs/StudioProjects/esperanto/app/src/main/res/layout/specefic_episode_reciclerview.xml" value="0.27355072463768115" />
-        <entry key="..\:/Users/XaDgs/StudioProjects/esperanto/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3651041666666667" />
-        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.5005208333333333" />
-        <entry key="app/src/main/res/drawable/ic_channel.xml" value="0.5005208333333333" />
-        <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.5005208333333333" />
-        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.5005208333333333" />
-        <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.5005208333333333" />
-        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.5005208333333333" />
-        <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.5005208333333333" />
+        <entry key="..\:/Users/Andreas/AndroidStudioProjects/esperanto/app/src/main/res/layout/fragment_favorites.xml" value="0.29347826086956524" />
+        <entry key="..\:/Users/Andreas/AndroidStudioProjects/esperanto/app/src/main/res/layout/fragment_player.xml" value="0.29347826086956524" />
+        <entry key="..\:/Users/Andreas/AndroidStudioProjects/esperanto/app/src/main/res/layout/recyclerview_favoritedchannels.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Andreas/AndroidStudioProjects/esperanto/app/src/main/res/layout/recyclerview_favoritedepisodes.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Andreas/AndroidStudioProjects/esperanto/app/src/main/res/layout/specefic_channel.xml" value="0.29347826086956524" />
+        <entry key="..\:/Users/Andreas/AndroidStudioProjects/esperanto/app/src/main/res/layout/specefic_episode.xml" value="0.29347826086956524" />
+        <entry key="..\:/Users/Andreas/AndroidStudioProjects/esperanto/app/src/main/res/layout/specefic_episode_reciclerview.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.31145833333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3134057971014493" />
-        <entry key="app/src/main/res/layout/channel_list.xml" value="0.18981481481481483" />
         <entry key="app/src/main/res/layout/fragment_channel.xml" value="0.23429584599797365" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2828125" />
         <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.43568840579710144" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2828125" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2828125" />
-        <entry key="app/src/main/res/layout/fragment_player.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.2828125" />
-        <entry key="app/src/main/res/layout/recycler_view_item.xml" value="0.484375" />
-        <entry key="app/src/main/res/layout/specefic_channel.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/specefic_episode.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/specefic_episode_reciclerview.xml" value="0.2020997375328084" />
+        <entry key="app/src/main/res/layout/player_fragment.xml" value="0.25" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.3625" />
       </map>
     </option>
