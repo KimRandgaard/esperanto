@@ -25,7 +25,10 @@ import com.example.esperanto_menu.ui.episodes.SpeceficEpisodeFragmentArgs
 import com.example.esperanto_menu.ui.episodes.SpeceficEpisodeFragmentDirections
 import com.example.esperanto_menu.viewModel.EsperantoViewModel
 import java.lang.Exception
-
+// Til musicservice er der hentet inspiration fra Ians lektion 3_2 omhandlende MusicService
+// fra 3-ugers perioden. Denne omfatter hele musicService package herunder:
+// MusicState, PlayerFragment, MusicService samt PlayerViewModel
+// : https://learn.inside.dtu.dk/d2l/le/content/80550/viewContent/367175/View
 class PlayerFragment : Fragment() {
     private var _binding: FragmentPlayerBinding? = null
     private val viewmodel: EsperantoViewModel by viewModels()
