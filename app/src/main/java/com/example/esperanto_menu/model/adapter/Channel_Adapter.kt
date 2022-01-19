@@ -10,9 +10,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esperanto_menu.R
 import com.example.esperanto_menu.model.data.Channel
-import java.util.zip.Inflater
-
-
 
 
 class Channel_Adapter(
@@ -29,7 +26,6 @@ class Channel_Adapter(
         return ChannelViewHolder(
             inflater.inflate(R.layout.channel_list, parent, false)
         )
-
 
     }
 

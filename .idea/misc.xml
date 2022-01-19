@@ -16,6 +16,9 @@
         <entry key="..\:/Users/XaDgs/StudioProjects/esperanto/app/src/main/res/layout/list_item.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/XaDgs/StudioProjects/esperanto/app/src/main/res/layout/specefic_episode_reciclerview.xml" value="0.27355072463768115" />
         <entry key="..\:/Users/XaDgs/StudioProjects/esperanto/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3651041666666667" />
+        <entry key="..\:/Users/aqib-/AndroidStudioProjects/esperanto/app/src/main/res/layout/card_view.xml" value="0.28229166666666666" />
+        <entry key="..\:/Users/aqib-/AndroidStudioProjects/esperanto/app/src/main/res/layout/channel_list.xml" value="0.28229166666666666" />
+        <entry key="..\:/Users/aqib-/AndroidStudioProjects/esperanto/app/src/main/res/layout/fragment_home.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.5005208333333333" />
         <entry key="app/src/main/res/drawable/ic_channel.xml" value="0.5005208333333333" />
         <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.5005208333333333" />
@@ -24,7 +27,6 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.5005208333333333" />
         <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.5005208333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3134057971014493" />
-        <entry key="app/src/main/res/layout/card_view.xml" value="0.3416666666666667" />
         <entry key="app/src/main/res/layout/channel_list.xml" value="0.18981481481481483" />
         <entry key="app/src/main/res/layout/fragment_channel.xml" value="0.23429584599797365" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2828125" />

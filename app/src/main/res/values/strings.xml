@@ -25,5 +25,8 @@
 	<string name="title_search">Serĉi</string>
 	<string name="title_episode">Elsendoj</string>
 	<string name="title_specefic_episode">Episode Episode</string>
+    <string name="channel_name">Channel Name</string>
+	<string name="episode_name">Episode Name</string>
+	<string name="pic">Pic</string>
 
 </resources>
