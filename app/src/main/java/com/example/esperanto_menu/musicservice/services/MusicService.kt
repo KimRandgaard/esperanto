@@ -29,21 +29,21 @@ class MusicService : Service() {
     private val songs: MutableList<String> = mutableListOf()
 
 
-    fun runAction(state: MusicState) {
+    fun runAction(state: MusicState, songURL : String = "") {
         musicState = state
         when (state) {
-            MusicState.PLAY -> startMusic()
+            MusicState.PLAY -> startMusic(songURL)
             MusicState.STOP -> stopMusic()
             MusicState.PAUSE -> pauseMusic()
         }
     }
 
-    private fun initializeMediaPlayer() {
+    private fun initializeMediaPlayer(songURL : String) {
         //if (songs.isNotEmpty()) {
         // musicMediaPlayer = MediaPlayer()
         //musicMediaPlayer?.setDataSource("http://melburno.org.au/3ZZZradio/mp3/2021-11-22.3ZZZ.radio.mp3")
         //musicMediaPlayer?.prepare()
-
+        var url = songURL //"http://melburno.org.au/3ZZZradio/mp3/2021-11-22.3ZZZ.radio.mp3"
         musicMediaPlayer = MediaPlayer().apply {
                 setAudioAttributes(
                    AudioAttributes.Builder()
@@ -51,10 +51,11 @@ class MusicService : Service() {
                         .setUsage(AudioAttributes.USAGE_MEDIA)
                        .build()
                 )
-                setDataSource("http://melburno.org.au/3ZZZradio/mp3/2021-11-22.3ZZZ.radio.mp3")
+                setDataSource(url)
 
         }
         //}
+        Log.d("Sang",songURL)
     }
 
 
@@ -63,8 +64,8 @@ class MusicService : Service() {
         Log.d("Sang",songURL)
     }
 
-    private fun startMusic() {
-        initializeMediaPlayer()
+    private fun startMusic(songURL : String) {
+        initializeMediaPlayer(songURL)
         Log.d("MUSICPLAYER", "Staten: " + musicMediaPlayer?.toString())
 
         Log.d("MUSICPLAYER", "Start Position: " + musicMediaPlayer?.currentPosition)
