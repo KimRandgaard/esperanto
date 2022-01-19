@@ -29,51 +29,45 @@ class MusicService : Service() {
     private val songs: MutableList<String> = mutableListOf()
 
 
-    fun runAction(state: MusicState, songURL : String = "") {
+    fun runAction(state: MusicState) {
         musicState = state
         when (state) {
-            MusicState.PLAY -> startMusic(songURL)
+            MusicState.PLAY -> startMusic()
             MusicState.STOP -> stopMusic()
             MusicState.PAUSE -> pauseMusic()
         }
     }
 
-    private fun initializeMediaPlayer(songURL : String) {
+    private fun initializeMediaPlayer() {
         //if (songs.isNotEmpty()) {
         // musicMediaPlayer = MediaPlayer()
         //musicMediaPlayer?.setDataSource("http://melburno.org.au/3ZZZradio/mp3/2021-11-22.3ZZZ.radio.mp3")
         //musicMediaPlayer?.prepare()
-        var url = songURL //"http://melburno.org.au/3ZZZradio/mp3/2021-11-22.3ZZZ.radio.mp3"
         musicMediaPlayer = MediaPlayer().apply {
-                setAudioAttributes(
-                   AudioAttributes.Builder()
-                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                        .setUsage(AudioAttributes.USAGE_MEDIA)
-                       .build()
-                )
-                setDataSource(url)
+            setAudioAttributes(
+                AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                    .build()
+            )
+            setDataSource("http://melburno.org.au/3ZZZradio/mp3/2021-11-22.3ZZZ.radio.mp3")
 
         }
         //}
-        Log.d("Sang",songURL)
     }
-
 
     fun setSong(songURL : String) {
         songs.add(songURL)
         Log.d("Sang",songURL)
     }
 
-    private fun startMusic(songURL : String) {
-        initializeMediaPlayer(songURL)
-        Log.d("MUSICPLAYER", "Staten: " + musicMediaPlayer?.toString())
-
-        Log.d("MUSICPLAYER", "Start Position: " + musicMediaPlayer?.currentPosition)
+    private fun startMusic() {
+        initializeMediaPlayer()
         musicMediaPlayer?.prepare()
         musicMediaPlayer?.start()
     }
 
-    //Sørger for at man kan kun trykke på start knappen én gange for af afspille - ungå loop
+
     private fun stopMusic() {
         musicMediaPlayer?.run {
             stop()
