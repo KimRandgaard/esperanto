@@ -5,11 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esperanto_menu.R
-import com.example.esperanto_menu.model.data.Channel
-import com.example.esperanto_menu.ui.episodes.EpisodesFragmentsDirections
 import com.example.esperanto_menu.R.layout.card_view
+import com.example.esperanto_menu.model.data.Channel
+import com.example.esperanto_menu.ui.home.HomeFragmentDirections
 
 
 class Home_Adapter(
@@ -31,12 +32,9 @@ class Home_Adapter(
         holder.bind(item)
 
         holder.itemView.setOnClickListener {
-            val action = EpisodesFragmentsDirections.actionNavigationEpisodesToNavigationSpeceficEpisode(
-                    episodeName = item.plennomo,
-                    episodeDate = item.dato
-                )
+            val action = HomeFragmentDirections.actionNavigationHomeToNavigationSpeceficEpisode()
 
-            //holder..findNavController().navigate(action)
+            holder.itemView.findNavController().navigate(action)
         }
     }
 
@@ -44,12 +42,12 @@ class Home_Adapter(
 
         private val channelName = ViewHolder.findViewById<TextView>(R.id.channelName_cardView)
         private val episodeName = ViewHolder.findViewById<TextView>(R.id.episodeName_cardView)
-        private val channelPicture = ViewHolder.findViewById<ImageView>(R.id.episodePic_onCard)
+       // private val channelPicture = ViewHolder.findViewById<ImageView>(R.id.episodePic_onCard)
 
         fun bind(item: Channel) {
             channelName.text = item.nomo
             episodeName.text = item.plennomo + " " + item.dato
-            channelPicture
+           // channelPicture
 
         }
     }

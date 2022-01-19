@@ -1,20 +1,15 @@
 package com.example.esperanto_menu.model.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esperanto_menu.R
-import com.example.esperanto_menu.model.adapter.Episode_Adapter.ViewHolder
 import com.example.esperanto_menu.model.data.Channel
 import com.example.esperanto_menu.ui.episodes.EpisodesFragmentsDirections
-import com.example.esperanto_menu.util.getDuration
 
 class Episode_Adapter(
 private val context: Context,

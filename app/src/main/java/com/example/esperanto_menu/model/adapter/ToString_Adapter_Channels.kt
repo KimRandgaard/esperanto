@@ -42,10 +42,6 @@ class ToString_Adapter_Channels(
 
           //  val position : Int = adapterPosition
 
-
-
-
-
          val action = ChannelFragmentDirections.actionNavigationChannelsToNavigationEpisodes(channelName = item)
              //R.id.action_navigation_channels_to_navigation_episodes
 
