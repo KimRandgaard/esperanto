@@ -40,19 +40,15 @@ class ToString_Adapter_Channels(
         holder.itemView.setOnClickListener {
             //onItemClick?.invoke(ChannelList[adapterPosition])
 
-          //  val position : Int = adapterPosition
+            //  val position : Int = adapterPosition
 
-         val action = ChannelFragmentDirections.actionNavigationChannelsToNavigationEpisodes(channelName = item)
-             //R.id.action_navigation_channels_to_navigation_episodes
+            val action =
+                ChannelFragmentDirections.actionNavigationChannelsToNavigationEpisodes(channelName = item)
+            //R.id.action_navigation_channels_to_navigation_episodes
 
             holder.view.findNavController().navigate(action)
 
-
             Log.d("Adapter", "onClick")
-            Toast.makeText(holder.itemView.context, "You clicked on + ${item} +", Toast.LENGTH_SHORT).show()
-
-
-
         }
     }
 
@@ -60,25 +56,11 @@ class ToString_Adapter_Channels(
         RecyclerView.ViewHolder(view) {
 
         private var channelString: String? = null
-
-
-
-
-        init {
-
-
-
-
-        }
-
-
         private val textView = view.findViewById<TextView>(R.id.channelName)
 
         fun bind(item: String) {
             channelString = item
             textView.text = item.capitalize()
-
-
 
             Log.d("TOSTRINGADAPTER", "BIND")
         }

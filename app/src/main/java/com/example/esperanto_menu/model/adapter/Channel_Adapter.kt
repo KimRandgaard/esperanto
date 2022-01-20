@@ -62,7 +62,7 @@ class Channel_Adapter(
         init {
             itemView.setOnClickListener {
                 onItemClick?.invoke(ChannelList[adapterPosition])
-                Toast.makeText(context, "Onclick", Toast.LENGTH_SHORT).show()
+
             }
         }
     }
