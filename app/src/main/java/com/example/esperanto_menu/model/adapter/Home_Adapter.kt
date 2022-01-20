@@ -46,7 +46,7 @@ class Home_Adapter(
         private val episodeDate = ViewHolder.findViewById<TextView>(R.id.episodeDate_cardVies)
 
         fun bind(item: Channel) {
-            channelName.text = item.nomo
+            channelName.text = item.nomo.capitalize()
             episodeName.text = item.plennomo
             episodeDate.text = item.dato
            // channelPicture
